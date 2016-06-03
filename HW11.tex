@@ -1,0 +1,81 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage{amssymb,amsmath,amsfonts,amsthm,graphicx,ifthen,mathrsfs, wrapfig}
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+
+\oddsidemargin=0in
+\evensidemargin=0in
+\textwidth=6.5in
+\topmargin=-1.0in
+\textheight=9.0in
+\parindent=0in
+
+
+\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+\special{papersize=8.5in,11in}
+\setlength{\pdfpageheight}{\paperheight}
+\setlength{\pdfpagewidth}{\paperwidth}
+
+\newcommand{\ud}{\,\mathrm{d}}
+\pointsinmargin
+
+Names: \underline{Chelsea Blake Kelsey Mihachik \hspace{4in}}\\
+Math 212 Fall 2015, Tennenhouse \\
+
+
+\begin{center}
+\textbf{HW 11, due 11/13/15}\\
+\end{center}
+
+
+For each of the following sorting methods use the pseudo-random sequence generator at https://www.random.org/sequences/ and sort the first 15 terms by hand. Determine the time complexity of each sorting method in the worst case and explain, and create a list of 10 terms that will require the greatest possible number of moves (a worst-case scenario for the sorting method). All methods are clearly outlined online.
+
+\begin{questions}
+
+\question
+Shell sort
+\\Initial unsorted list: 
+20 28 7 98 90 37 74 65 82 67 36 52 93 95 58
+\\Complexity: $O((n \log(n))^2)$
+\\Worst-case: $O(n^{1.5})$ This happens when the terms are listed in descending order (completely reversed)
+
+
+\question
+Selection sort
+\\Initial unsorted list:
+7 8 21 94 1 98 50 41 4 54 86 91 49 42 89
+\\Complexity: $O(n^2)$
+\\Worst-case: No worst case, algorithm must go through the entire list anyways regardless of order.
+
+\question
+Bubble sort
+\\Initial unsorted list:
+70,41,76,65,30,42,95,75,9,94,51,18,36,87,80
+\\Complexity: $O(n^2)$
+\\Worst-case: $O(n^2)$ This happens when terms are listed in descending order (completely reversed)
+
+\question
+Heap sort
+\\Initial unsorted list:
+26,78,42,36,25,34,6,23,66,32,91,30,52,79,93
+\\Complexity: $O(n \log(n))$
+\\Worst-case: It is still $O(n \log(n))$. An initial list that is almost sorted would be the worst scenario, because when the algorithm goes through and heaps certain values, it will break up the order it once had and start over.
+
+\question
+Quicksort
+\\Initial unsorted list:
+13 67 94 52 86 63 70 87 98 16 14 66 30 18 10
+\\Complexity: $O(n \log(n))$
+\\Worst-case: $O(n^2)$ : This happens when the data is already sorted and the first or last value is chosen for the pivot.
+
+
+
+
+\end{questions}
+
+\end{document}

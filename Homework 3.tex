@@ -1,0 +1,694 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage{amssymb,amsmath,amsfonts,amsthm,graphicx,ifthen,mathrsfs, wrapfig}
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+
+\oddsidemargin=0in
+\evensidemargin=0in
+\textwidth=6.5in
+\topmargin=-1.0in
+\textheight=9.0in
+\parindent=0in
+
+\newtheorem{problem}{Problem}
+
+\begin{document}
+\special{papersize=8.5in,11in}
+\setlength{\pdfpageheight}{\paperheight}
+\setlength{\pdfpagewidth}{\paperwidth}
+
+\newcommand{\ud}{\,\mathrm{d}}
+\pointsinmargin
+
+Names: Chelsea Blake, Chanoy Rhule
+\\
+Math 340 Fall 2015, Tennenhouse \\
+
+
+\begin{center}
+\textbf{HW 3, due 9/16/15}\\
+\end{center}
+
+
+\begin{questions}
+
+%-----------1----------------%
+\question[3.4]
+Give an example of a graph that is $4$-regular but neither complete nor complete-bipartite. Also, give an example of a $4$-regular complete graph and an example of a $4$-regular complete-bipartite graph.
+\\
+Answer:
+\\
+neither complete nor complete-bipartite:
+\\
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(2.96,12.22) rectangle (6.62,15.64);
+\draw (4.22,14.34)-- (4.26,13.72);
+\draw (4.26,13.72)-- (4.26,12.92);
+\draw (4.26,12.92)-- (5.48,12.9);
+\draw (5.48,12.9)-- (5.44,13.62);
+\draw (5.44,13.62)-- (5.44,14.32);
+\draw (5.44,14.32)-- (4.22,14.34);
+\draw (4.22,14.34)-- (5.48,12.9);
+\draw (4.22,14.34)-- (5.44,13.62);
+\draw (4.26,13.72)-- (5.44,14.32);
+\draw (4.26,13.72)-- (5.48,12.9);
+\draw (4.26,12.92)-- (5.44,14.32);
+\draw (4.26,12.92)-- (5.44,13.62);
+\begin{scriptsize}
+\draw [fill=qqqqff] (4.22,14.34) circle (1.5pt);
+\draw[color=qqqqff] (4.36,14.62) node {$A$};
+\draw [fill=qqqqff] (4.26,13.72) circle (1.5pt);
+\draw[color=qqqqff] (4.4,14.) node {$B$};
+\draw [fill=qqqqff] (4.26,12.92) circle (1.5pt);
+\draw[color=qqqqff] (4.4,13.2) node {$C$};
+\draw [fill=qqqqff] (5.44,14.32) circle (1.5pt);
+\draw[color=qqqqff] (5.58,14.6) node {$D$};
+\draw [fill=qqqqff] (5.44,13.62) circle (1.5pt);
+\draw[color=qqqqff] (5.58,13.9) node {$E$};
+\draw [fill=qqqqff] (5.48,12.9) circle (1.5pt);
+\draw[color=qqqqff] (5.62,13.18) node {$F$};
+\draw[color=black] (3.98,14.18) node {$a$};
+\draw[color=black] (3.98,13.5) node {$b$};
+\draw[color=black] (4.92,12.76) node {$c$};
+\draw[color=black] (5.82,13.44) node {$d$};
+\draw[color=black] (5.8,14.14) node {$e$};
+\draw[color=black] (4.88,14.82) node {$f$};
+\draw[color=black] (4.66,13.58) node {$g$};
+\draw[color=black] (4.72,13.88) node {$h$};
+\draw[color=black] (5.04,13.9) node {$i$};
+\draw[color=black] (4.74,13.22) node {$j$};
+\draw[color=black] (5.14,13.58) node {$k$};
+\draw[color=black] (5.06,13.16) node {$l$};
+\end{scriptsize}
+\end{tikzpicture}
+\\
+\\
+Complete:
+\\
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(7.06,7.58) rectangle (10.42,11.04);
+\draw (8.12,10.2)-- (9.54,10.18);
+\draw (9.54,10.18)-- (9.52,8.96);
+\draw (9.52,8.96)-- (8.62,8.04);
+\draw (8.62,8.04)-- (8.02,8.96);
+\draw (8.02,8.96)-- (8.12,10.2);
+\draw (8.12,10.2)-- (9.52,8.96);
+\draw (8.12,10.2)-- (8.62,8.04);
+\draw (8.62,8.04)-- (9.54,10.18);
+\draw (9.54,10.18)-- (8.02,8.96);
+\draw (8.02,8.96)-- (9.52,8.96);
+\begin{scriptsize}
+\draw [fill=qqqqff] (8.12,10.2) circle (1.5pt);
+\draw[color=qqqqff] (8.26,10.48) node {$A$};
+\draw [fill=qqqqff] (9.54,10.18) circle (1.5pt);
+\draw[color=qqqqff] (9.68,10.46) node {$B$};
+\draw [fill=qqqqff] (8.02,8.96) circle (1.5pt);
+\draw[color=qqqqff] (8.16,9.24) node {$C$};
+\draw [fill=qqqqff] (9.52,8.96) circle (1.5pt);
+\draw[color=qqqqff] (9.66,9.24) node {$D$};
+\draw [fill=qqqqff] (8.62,8.04) circle (1.5pt);
+\draw[color=qqqqff] (8.76,8.32) node {$E$};
+\draw[color=black] (8.88,10.04) node {$a$};
+\draw[color=black] (9.26,9.74) node {$b$};
+\draw[color=black] (8.9,8.9) node {$c$};
+\draw[color=black] (8.64,8.84) node {$d$};
+\draw[color=black] (8.44,9.72) node {$e$};
+\draw[color=black] (8.66,9.52) node {$f$};
+\draw[color=black] (8.1,9.22) node {$g$};
+\draw[color=black] (9.42,9.16) node {$h$};
+\draw[color=black] (8.62,9.98) node {$i$};
+\draw[color=black] (8.82,8.82) node {$j$};
+\end{scriptsize}
+\end{tikzpicture}
+\\
+\\
+complete-bipartite:
+\\
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(3.0900882832212617,14.658067805142444) rectangle (5.370279018269858,18.46373825730101);
+\draw (3.46,17.8)-- (5.,18.);
+\draw (3.46,17.8)-- (5.1,17.);
+\draw (3.46,17.8)-- (5.1,16.);
+\draw (3.46,17.8)-- (5.189965166313776,15.08429752066117);
+\draw (3.46,16.86)-- (5.,18.);
+\draw (3.46,16.86)-- (5.1,17.);
+\draw (3.46,16.86)-- (5.1,16.);
+\draw (3.46,16.86)-- (5.189965166313776,15.08429752066117);
+\draw (3.46,15.82)-- (5.,18.);
+\draw (3.46,15.82)-- (5.1,17.);
+\draw (3.46,15.82)-- (5.1,16.);
+\draw (3.46,15.82)-- (5.189965166313776,15.08429752066117);
+\draw (3.46,14.84)-- (5.189965166313776,15.08429752066117);
+\draw (3.46,14.84)-- (5.1,16.);
+\draw (3.46,14.84)-- (5.1,17.);
+\draw (3.46,14.84)-- (5.,18.);
+\begin{scriptsize}
+\draw [fill=qqqqff] (3.46,17.8) circle (1.5pt);
+\draw[color=qqqqff] (3.571818720203359,18.030180864017122) node {$A$};
+\draw [fill=qqqqff] (3.46,16.86) circle (1.5pt);
+\draw[color=qqqqff] (3.571818720203359,17.082777671285665) node {$B$};
+\draw [fill=qqqqff] (3.46,15.82) circle (1.5pt);
+\draw[color=qqqqff] (3.571818720203359,16.03902839115779) node {$C$};
+\draw [fill=qqqqff] (3.46,14.84) circle (1.5pt);
+\draw[color=qqqqff] (3.571818720203359,15.059509835960858) node {$D$};
+\draw [fill=qqqqff] (5.,18.) circle (1.5pt);
+\draw[color=qqqqff] (5.113356118546072,18.222873038809958) node {$E$};
+\draw [fill=qqqqff] (5.1,17.) circle (1.5pt);
+\draw[color=qqqqff] (5.209702205942492,17.22729680238029) node {$F$};
+\draw [fill=qqqqff] (5.1,16.) circle (1.5pt);
+\draw[color=qqqqff] (5.209702205942492,16.231720565950624) node {$G$};
+\draw [fill=qqqqff] (5.189965166313776,15.08429752066117) circle (1.5pt);
+\draw[color=qqqqff] (5.306048293338912,15.316432735684645) node {$H$};
+\draw[color=black] (4.3104720569092425,17.789315645526074) node {$a$};
+\draw[color=black] (4.214125969512823,17.307585208543976) node {$b$};
+\draw[color=black] (4.13383756334914,16.85797013402735) node {$c$};
+\draw[color=black] (4.149895244581876,16.4404704219762) node {$d$};
+\draw[color=black] (4.422875825538399,17.355758252242186) node {$e$};
+\draw[color=black] (4.342587419374716,16.80979709032914) node {$f$};
+\draw[color=black] (4.198068288280086,16.34412433457978) node {$g$};
+\draw[color=black] (4.18201060704735,15.926624622528633) node {$h$};
+\draw[color=black] (4.4871065504693455,16.90614317772556) node {$i$};
+\draw[color=black] (4.471048869236609,16.34412433457978) node {$j$};
+\draw[color=black] (4.342587419374716,15.79816317266674) node {$k$};
+\draw[color=black] (4.262299013211033,15.348548098150117) node {$l$};
+\draw[color=black] (4.406818144305662,14.850759979935283) node {$m$};
+\draw[color=black] (4.471048869236609,15.348548098150117) node {$n$};
+\draw[color=black] (4.519221912934818,15.89450926006316) node {$p$};
+\draw[color=black] (4.5031642317020815,16.4404704219762) node {$q$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\\
+
+
+
+
+
+
+%-------------2--------------%
+\question[3.5]
+\emph{Prove that $f:\mathbb{W}\rightarrow \mathbb{Z}$ defined by $f(k)=\lfloor \frac{k+1}{2}\rfloor (-1)^k$ is a bijection. That is, show that it is injective (for every $x_1\neq x_2, f(x_1)\neq f(x_2)$) and surjective (for any integer $z$ there is a $k$ that makes $f(k)=z$). See $3.2$ problem $2$ for a review of the floor function.}
+\\
+\\
+Answer: $f(x)= \lfloor \frac{k+1}{2}\rfloor (-1)^k$ show that $f(k)$ is always an integer.
+\\
+Let $K_1=2k$ and $k_2=2k+1$ For $k_1$ ;\ $f(k)= \lfloor \frac{2k+1}{2}\rfloor (-1)^{2k}$ the fraction $\frac{2k+1}{2}$ will not reduce to an integer, but because it is in a "floor" the number achieved will round down to the lowest integer. The $(-1)^{2k}$ will always give you an answer of $+1$ this part of the function will only change whether the number is positive or negative.
+\\
+For $k_2=2k+1$ \;  $f(k)= \lfloor \frac{2k+2}{2}\rfloor (-1)^{2k+1}$ This simplifies to $\lfloor(K+1)\rfloor(-1)^{2k+1}$ For any $k$ the $k+1$ will always be an integer because it is surrounded by the "floor" that will make the function inside be rounded down to an integer. The $(-1)^{2k+1}$ is always going to equal $-1$. The $-1$ will only change the sign in front of your answer, but will still keep the answer as a whole an integer.
+\\
+\\
+Therefore, for any $k$ $f(k)$ will always be an integer. This proves that it is bijective.
+
+%SHOWED THAT IT IS SURJECTIVE BUT DID I SHOW THAT IT IS INJECTIVE?%
+
+%------------3------------%
+\question[3.8]
+\emph{Draw all non isomorphic simple graphs with four vertices. There are $11$. Verify that the Handshaking Lemma holds for each graph.}
+\\
+Answer:
+\\
+
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.49519099619211165,5.486476500551812) rectangle (18.401166762002937,14.165296855891969);
+\draw (1.56,11.86)-- (2.36,10.78);
+\draw (2.36,10.78)-- (3.34,11.82);
+\draw (3.34,11.82)-- (3.2,10.74);
+\draw (3.2,10.74)-- (1.56,11.86);
+\draw (12.88,11.14)-- (11.14,11.14);
+\draw (11.14,11.14)-- (12.68,12.14);
+\draw (15.78,11.16)-- (17.,12.);
+\draw (17.,12.)-- (17.4,11.04);
+\draw (17.4,11.04)-- (15.76,12.16);
+\draw (15.76,12.16)-- (17.,12.);
+\draw (3.38,8.96)-- (3.66,7.9);
+\draw (3.66,7.9)-- (2.34,7.94);
+\draw (2.34,7.94)-- (2.38,9.);
+\draw (2.38,9.)-- (3.38,8.96);
+\draw (3.38,8.96)-- (2.34,7.94);
+\draw (7.14,8.96)-- (7.14,8.22);
+\draw (7.14,8.22)-- (8.44,8.18);
+\draw (8.44,8.18)-- (8.38,8.96);
+\draw (8.38,8.96)-- (7.14,8.96);
+\draw (7.14,8.96)-- (8.44,8.18);
+\draw (8.38,8.96)-- (7.14,8.22);
+\draw (11.44,9.18)-- (11.6,8.22);
+\draw (12.8,9.46)-- (11.44,9.18);
+\draw (14.92,8.3)-- (16.54,8.58);
+\draw (15.32,9.32)-- (17.,9.46);
+\draw (2.16,6.92)-- (3.42,6.1);
+\draw (3.22,7.)-- (3.42,6.1);
+\draw (3.42,6.1)-- (2.16,5.92);
+\draw (1.005709840623888,12.217762004911497) node[anchor=north west] {1.};
+\draw (5.713828072605827,12.425751163754072) node[anchor=north west] {2.};
+\draw (10.25177335644384,12.198853899562172) node[anchor=north west] {3.};
+\draw (14.695178113535226,12.539199795850022) node[anchor=north west] {4.};
+\draw (1.4216881583090393,9.343729991814104) node[anchor=north west] {5.};
+\draw (6.2054388116882775,9.513902939958028) node[anchor=north west] {6.};
+\draw (10.59211925273169,9.362638097163428) node[anchor=north west] {7.};
+\draw (14.41155653329535,9.721892098800604) node[anchor=north west] {8.};
+\draw (1.57295300110364,7.396195140833633) node[anchor=north west] {9.};
+\draw (6.073082074243002,7.434011351532283) node[anchor=north west] {10.};
+\draw (10.365221988539789,7.434011351532283) node[anchor=north west] {11.};
+\draw (7.,7.)-- (8.26,6.32);
+\draw (7.04,6.24)-- (8.26,7.);
+\draw (8.26,7.)-- (7.,7.);
+\draw (11.4,7.06)-- (12.58,7.16);
+\draw (12.68,12.14)-- (12.88,11.14);
+\begin{scriptsize}
+\draw [fill=qqqqff] (1.56,11.86) circle (1.5pt);
+\draw[color=qqqqff] (1.7242178438982403,12.179945794212847) node {$A_2$};
+\draw [fill=qqqqff] (2.36,10.78) circle (1.5pt);
+\draw[color=qqqqff] (2.5372663739192176,11.102183789301325) node {$B_2$};
+\draw [fill=qqqqff] (3.34,11.82) circle (1.5pt);
+\draw[color=qqqqff] (3.5015797467347953,12.142129583514198) node {$C_2$};
+\draw [fill=qqqqff] (3.2,10.74) circle (1.5pt);
+\draw[color=qqqqff] (3.3692230092895197,11.064367578602674) node {$D_2$};
+\draw [fill=qqqqff] (6.5,11.98) circle (1.5pt);
+\draw[color=qqqqff] (6.678141445421404,12.293394426308797) node {$A_4$};
+\draw [fill=qqqqff] (6.66,11.08) circle (1.5pt);
+\draw[color=qqqqff] (6.8294062882160045,11.404713474890524) node {$B_3$};
+\draw [fill=qqqqff] (7.9,11.98) circle (1.5pt);
+\draw[color=qqqqff] (8.077341241271457,12.293394426308797) node {$C_3$};
+\draw [fill=qqqqff] (8.84,11.18) circle (1.5pt);
+\draw[color=qqqqff] (9.003838403388386,11.499254001637148) node {$D_3$};
+\draw [fill=qqqqff] (11.,12.04) circle (1.5pt);
+\draw[color=qqqqff] (11.178270518560767,12.369026847706097) node {$A_5$};
+\draw [fill=qqqqff] (11.14,11.14) circle (1.5pt);
+\draw[color=qqqqff] (11.310627256006041,11.461437790938499) node {$B_5$};
+\draw [fill=qqqqff] (12.68,12.14) circle (1.5pt);
+\draw[color=qqqqff] (12.842183789301371,12.463567374452722) node {$C_5$};
+\draw [fill=qqqqff] (12.88,11.14) circle (1.5pt);
+\draw[color=qqqqff] (13.050172948143947,11.461437790938499) node {$D_5$};
+\draw [fill=qqqqff] (15.76,12.16) circle (1.5pt);
+\draw[color=qqqqff] (15.924204961241355,12.482475479802046) node {$A_7$};
+\draw [fill=qqqqff] (15.78,11.16) circle (1.5pt);
+\draw[color=qqqqff] (15.94311306659068,11.480345896287824) node {$B_7$};
+\draw [fill=qqqqff] (17.,12.) circle (1.5pt);
+\draw[color=qqqqff] (17.172139914296807,12.312302531658123) node {$C_7$};
+\draw [fill=qqqqff] (17.4,11.04) circle (1.5pt);
+\draw[color=qqqqff] (17.569210126632633,11.366897264191874) node {$D_7$};
+\draw [fill=qqqqff] (2.38,9.) circle (1.5pt);
+\draw[color=qqqqff] (2.5561744792685426,9.324821886464779) node {$A_9$};
+\draw [fill=qqqqff] (2.34,7.94) circle (1.5pt);
+\draw[color=qqqqff] (2.5183582685698926,8.26596798690258) node {$B_9$};
+\draw [fill=qqqqff] (3.38,8.96) circle (1.5pt);
+\draw[color=qqqqff] (3.5583040627827702,9.287005675766128) node {$C_9$};
+\draw [fill=qqqqff] (3.66,7.9) circle (1.5pt);
+\draw[color=qqqqff] (3.823017537673321,8.22815177620393) node {$D_9$};
+\draw [fill=qqqqff] (7.14,8.96) circle (1.5pt);
+\draw[color=qqqqff] (7.264292711250481,9.230281359718154) node {$A$};
+\draw [fill=qqqqff] (7.14,8.22) circle (1.5pt);
+\draw[color=qqqqff] (7.264292711250481,8.49286525109448) node {$B$};
+\draw [fill=qqqqff] (8.44,8.18) circle (1.5pt);
+\draw[color=qqqqff] (8.568951980353908,8.436140935046506) node {$C$};
+\draw [fill=qqqqff] (8.38,8.96) circle (1.5pt);
+\draw[color=qqqqff] (8.512227664305934,9.230281359718154) node {$D$};
+\draw [fill=qqqqff] (11.44,9.18) circle (1.5pt);
+\draw[color=qqqqff] (11.613156941595243,9.494994834608702) node {$A_1$};
+\draw [fill=qqqqff] (11.6,8.22) circle (1.5pt);
+\draw[color=qqqqff] (11.764421784389844,8.549589567142455) node {$B_1$};
+\draw [fill=qqqqff] (12.94,8.2) circle (1.5pt);
+\draw[color=qqqqff] (13.106897264191922,8.53068146179313) node {$C_1$};
+\draw [fill=qqqqff] (12.8,9.46) circle (1.5pt);
+\draw[color=qqqqff] (12.974540526746647,9.778616414848578) node {$D_1$};
+\draw [fill=qqqqff] (14.92,8.3) circle (1.5pt);
+\draw[color=qqqqff] (15.092248325871052,8.625221988539755) node {$A_3$};
+\draw [fill=qqqqff] (15.32,9.32) circle (1.5pt);
+\draw[color=qqqqff] (15.489318538206879,9.646259677403302) node {$B_4$};
+\draw [fill=qqqqff] (16.54,8.58) circle (1.5pt);
+\draw[color=qqqqff] (16.718345385913004,8.908843568779629) node {$C_4$};
+\draw [fill=qqqqff] (17.,9.46) circle (1.5pt);
+\draw[color=qqqqff] (17.172139914296807,9.778616414848578) node {$D_4$};
+\draw [fill=qqqqff] (2.16,6.92) circle (1.5pt);
+\draw[color=qqqqff] (2.329277215076642,7.244930298039033) node {$A_6$};
+\draw [fill=qqqqff] (2.16,5.92) circle (1.5pt);
+\draw[color=qqqqff] (2.329277215076642,6.24280071452481) node {$B_6$};
+\draw [fill=qqqqff] (3.22,7.) circle (1.5pt);
+\draw[color=qqqqff] (3.388131114638845,7.3205627194363325) node {$C_6$};
+\draw [fill=qqqqff] (3.42,6.1) circle (1.5pt);
+\draw[color=qqqqff] (3.5961202734814206,6.412973662668735) node {$D_6$};
+\draw [fill=qqqqff] (7.,7.) circle (1.5pt);
+\draw[color=qqqqff] (7.169752184503856,7.3205627194363325) node {$A_8$};
+\draw [fill=qqqqff] (7.04,6.24) circle (1.5pt);
+\draw[color=qqqqff] (7.207568395202506,6.564238505463335) node {$B_8$};
+\draw [fill=qqqqff] (8.26,7.) circle (1.5pt);
+\draw[color=qqqqff] (8.436595242908634,7.3205627194363325) node {$C_8$};
+\draw [fill=qqqqff] (8.26,6.32) circle (1.5pt);
+\draw[color=qqqqff] (8.436595242908634,6.639870926860634) node {$D_8$};
+\draw [fill=qqqqff] (11.4,7.06) circle (1.5pt);
+\draw[color=qqqqff] (11.613156941595244,7.377287035484308) node {$A_{10}$};
+\draw [fill=qqqqff] (11.4,6.22) circle (1.5pt);
+\draw[color=qqqqff] (11.613156941595244,6.545330400114009) node {$B_{10}$};
+\draw [fill=qqqqff] (12.58,7.16) circle (1.5pt);
+\draw[color=qqqqff] (12.785459473253397,7.490735667580258) node {$C_{10}$};
+\draw [fill=qqqqff] (12.78,6.28) circle (1.5pt);
+\draw[color=qqqqff] (12.993448632095973,6.602054716161984) node {$D_{10}$};
+\draw[color=black] (12.53965410371217,11.745059371178373) node {$e$};
+\end{scriptsize}
+\end{tikzpicture}
+
+
+
+\\
+Each graph verified using handshaking lemma (the sum of all the degrees is always an even number)
+\\
+$1. 2+2+2+2=8$ 
+\\
+$2. 0+0+0+0=0$
+\\
+$3. 0+2+2+2=6$
+\\
+$4. 2+3+2+1=8$
+\\
+$5. 2+3+2+3=10$
+\\
+$6. 3+3+3+3=12$
+\\
+$7. 2+1+1+0=4$
+\\
+$8. 1+1+1+1=4$
+\\
+$9. 1+1+3+1=6$
+\\
+$10. 2+2+1+1=6$
+\\
+$11. 1+1+0+0=2$
+\\
+The sum of all graphs is an even number therefore the handshaking lemma stands for each graph.
+
+
+%----------4------------%
+\question[3.10] 
+\emph{Examine Figure $3.11$. Either show that the two graphs are isomorphic (by labeling their vertices and giving a bijection between them that preserves adjacency) or explain why they are not isomorphic. Repeat with the two graphs in Figure $3.12$.}
+
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm, scale= 1.45]
+\clip(1.824644498317177,15.392005564339254) rectangle (7.181973810209133,17.631064423357554);
+\draw (2.8492230647302126,16.231720565950628)-- (2.833165383497476,15.733932447735794);
+\draw (2.833165383497476,15.733932447735794)-- (3.876914663625355,16.472585784441677);
+\draw (2.833165383497476,15.733932447735794)-- (3.314895820479574,15.814220853899476);
+\draw (2.8492230647302126,16.231720565950628)-- (3.,17.);
+\draw (3.,17.)-- (3.314895820479574,15.814220853899476);
+\draw (3.,17.)-- (3.6039340826688324,16.82585477156188);
+\draw (3.6039340826688324,16.82585477156188)-- (3.876914663625355,16.472585784441677);
+\draw (3.876914663625355,16.472585784441677)-- (3.314895820479574,15.814220853899476);
+\draw (5.69143264292459,15.733932447735794)-- (6.414028298397737,15.878451578830422);
+\draw (6.414028298397737,15.878451578830422)-- (6.285566848535844,16.295951290881572);
+\draw (5.69143264292459,16.31200897211431)-- (5.69143264292459,15.733932447735794);
+\draw (5.69143264292459,16.31200897211431)-- (6.879701054147098,16.48864346567441);
+\draw (6.879701054147098,16.48864346567441)-- (6.638835835656049,16.745566365398197);
+\draw (6.638835835656049,16.745566365398197)-- (6.285566848535844,16.295951290881572);
+\draw (6.879701054147098,16.48864346567441)-- (6.414028298397737,15.878451578830422);
+\draw [line width=1.6pt] (6.87970105414711,16.4725857844417)-- (6.87970105414711,16.5368165093726)-- (6.87970105414711,16.6010472343036)-- (6.87970105414711,16.6652779592345)-- (6.89575873537984,16.7295086841655)-- (6.89575873537984,16.7937394090964)-- (6.89575873537984,16.8579701340274)-- (6.89575873537984,16.9222008589583)-- (6.89575873537984,16.9864315838893)-- (6.87970105414711,17.0346046275875)-- (6.86364337291437,17.0988353525184)-- (6.84758569168163,17.1470083962166)-- (6.79941264798342,17.1630660774494)-- (6.75123960428521,17.1791237586821)-- (6.703066560587,17.1951814399148)-- (6.63883583565606,17.243354483613)-- (6.57460511072511,17.2754698460785)-- (6.5264320670269,17.307585208544)-- (6.47825902332869,17.3236428897767)-- (6.41402829839774,17.3397005710095)-- (6.3497975734668,17.3397005710095)-- (6.28556684853585,17.3397005710095)-- (6.2213361236049,17.3397005710095)-- (6.1731630799067,17.307585208544)-- (6.07681699251028,17.2754698460785)-- (6.02864394881206,17.2594121648458)-- (5.98047090511385,17.243354483613)-- (5.91624018018291,17.2272968023803)-- (5.8680671364847,17.1951814399148)-- (5.81989409278649,17.1791237586821)-- (5.77172104908828,17.1630660774494)-- (5.73960568662281,17.1148930337512)-- (5.67537496169186,17.0827776712857)-- (5.62720191799365,17.0506623088202)-- (5.5629711930627,17.002489265122)-- (5.51479814936449,16.9703739026565)-- (5.48268278689902,16.9222008589583)-- (5.43450974320081,16.9061431777256)-- (5.40239438073534,16.8419124527946)-- (5.33816365580439,16.8097970903292)-- (5.27393293087344,16.7134510029327)-- (5.22575988717524,16.6492202780018)-- (5.19364452470976,16.5689318718381)-- (5.17758684347702,16.5047011469072)-- (5.17758684347702,16.4404704219762)-- (5.17758684347702,16.3762396970453)-- (5.17758684347702,16.2959512908816)-- (5.17758684347702,16.2317205659506)-- (5.17758684347702,16.1674898410197)-- (5.17758684347702,16.1032591160888)-- (5.2097022059425,16.0550860723905)-- (5.22575988717524,16.0069130286923)-- (5.25787524964071,15.9587399849941)-- (5.30604829333892,15.9266246225286)-- (5.35422133703713,15.8784515788304)-- (5.3863366995026,15.8302785351322)-- (5.40239438073534,15.782105491434)-- (5.45056742443355,15.7499901289685)-- (5.51479814936449,15.7499901289685)-- (5.57902887429544,15.7499901289685);
+\draw [line width=1.6pt] (3.86085698239262,16.5047011469072)-- (3.86085698239262,16.5689318718381)-- (3.86085698239262,16.6331625967691)-- (3.86085698239262,16.6973933217)-- (3.86085698239262,16.7776817278637)-- (3.86085698239262,16.8419124527946)-- (3.86085698239262,16.9061431777256)-- (3.86085698239262,16.9703739026565)-- (3.87691466362536,17.0346046275875)-- (3.87691466362536,17.1148930337512)-- (3.86085698239262,17.1791237586821)-- (3.84479930115989,17.2272968023803)-- (3.81268393869441,17.307585208544)-- (3.7645108949962,17.3718159334749)-- (3.73239553253073,17.4199889771732)-- (3.68422248883252,17.4360466584059)-- (3.61999176390157,17.4360466584059)-- (3.55576103897063,17.4360466584059)-- (3.45941495157421,17.4360466584059)-- (3.411241907876,17.4521043396386)-- (3.31489582047958,17.4681620208714)-- (3.25066509554863,17.4842197021041)-- (3.18643437061768,17.4842197021041)-- (3.12220364568674,17.4842197021041)-- (3.05797292075579,17.4842197021041)-- (2.96162683335937,17.4842197021041)-- (2.88133842719569,17.4842197021041)-- (2.83316538349748,17.4681620208714)-- (2.76893465856653,17.4681620208714)-- (2.72076161486832,17.4521043396386)-- (2.67258857117011,17.4360466584059)-- (2.6244155274719,17.4199889771732)-- (2.6244155274719,17.3397005710095)-- (2.60835784623917,17.2754698460785)-- (2.60835784623917,17.2112391211476)-- (2.60835784623917,17.1470083962166)-- (2.59230016500643,17.0988353525184)-- (2.64047320870464,17.0827776712857)-- (2.68864625240285,17.0667199900529)-- (2.64047320870464,17.0827776712857)-- (2.57624248377369,17.0827776712857)-- (2.52806944007548,17.0667199900529)-- (2.52806944007548,17.002489265122)-- (2.52806944007548,16.9382585401911)-- (2.54412712130822,16.8900854964928)-- (2.54412712130822,16.8258547715619)-- (2.54412712130822,16.761624046631)-- (2.52806944007548,16.7134510029327)-- (2.52806944007548,16.6492202780018)-- (2.52806944007548,16.5849895530708)-- (2.52806944007548,16.5207588281399)-- (2.56018480254096,16.4725857844417)-- (2.57624248377369,16.4244127407435)-- (2.6244155274719,16.3762396970453)-- (2.65653088993738,16.3280666533471)-- (2.70470393363559,16.2959512908816)-- (2.7528769773338,16.2798936096489);
+\begin{scriptsize}
+\draw [fill=qqqqff] (2.8492230647302126,16.231720565950628) circle (1.5pt);
+\draw[color=qqqqff] (2.9500353384520297,16.435336655714273) node {$A_1$};
+\draw [fill=qqqqff] (2.833165383497476,15.733932447735794) circle (1.5pt);
+\draw[color=qqqqff] (2.9383125172006253,15.93125534190387) node {$B_1$};
+\draw [fill=qqqqff] (3.314895820479574,15.814220853899476) circle (1.5pt);
+\draw[color=qqqqff] (3.4189481885082187,16.013315090663703) node {$C_1$};
+\draw [fill=qqqqff] (3.876914663625355,16.472585784441677) circle (1.5pt);
+\draw[color=qqqqff] (3.981643608575645,16.66979308074237) node {$D_1$};
+\draw [fill=qqqqff] (3.6039340826688324,16.82585477156188) circle (1.5pt);
+\draw[color=qqqqff] (3.7120187197933365,17.021477718284512) node {$E_1$};
+\draw [fill=qqqqff] (3.,17.) circle (1.5pt);
+\draw[color=qqqqff] (3.1024320147202915,17.197320037055583) node {$F_1$};
+\draw [fill=qqqqff] (5.69143264292459,15.733932447735794) circle (1.5pt);
+\draw[color=qqqqff] (5.775235260040567,15.896086878149656) node {$A$};
+\draw [fill=qqqqff] (6.414028298397737,15.878451578830422) circle (1.5pt);
+\draw[color=qqqqff] (6.4903273563762545,16.036760733166513) node {$F$};
+\draw [fill=qqqqff] (6.285566848535844,16.295951290881572) circle (1.5pt);
+\draw[color=qqqqff] (6.373099143862207,16.458782298217084) node {$C$};
+\draw [fill=qqqqff] (5.69143264292459,16.31200897211431) circle (1.5pt);
+\draw[color=qqqqff] (5.775235260040567,16.470505119468488) node {$B$};
+\draw [fill=qqqqff] (6.879701054147098,16.48864346567441) circle (1.5pt);
+\draw[color=qqqqff] (6.959240206432443,16.658070259490966) node {$D$};
+\draw [fill=qqqqff] (6.638835835656049,16.745566365398197) circle (1.5pt);
+\draw[color=qqqqff] (6.724783781404349,16.904249505770466) node {$E$};
+\end{scriptsize}
+\end{tikzpicture}
+Figure 3.11
+\\
+Answer: No matter how you try to label the vertices there is no way of making A connect to B, D and F and to make D connect to A, E, C, and B in the second graph, if using the labelings of the first graph.
+\\
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm, scale=1.50]
+\clip(0.23469949176022198,16.4) rectangle (13.61718353827183,20.263009702135744);
+\draw (1.899043486139734,16.526279625577853)-- (2.445160515530192,16.848578200300103);
+\draw (2.445160515530192,16.848578200300103)-- (2.212389322675243,17.278309633263063);
+\draw (2.212389322675243,17.278309633263063)-- (1.8363673195685817,17.229718417745122);
+\draw (1.8363673195685817,17.229718417745122)-- (1.899043486139734,16.526279625577853);
+\draw (1.899043486139734,16.526279625577853)-- (1.907996224326463,18.46007107391125);
+\draw (1.8363673195685817,17.229718417745122)-- (1.907996224326463,18.46007107391125);
+\draw (2.445160515530192,16.848578200300103)-- (1.907996224326463,18.46007107391125);
+\draw (2.212389322675243,17.278309633263063)-- (2.2213420608619714,17.92290678270753);
+\draw (2.2213420608619714,17.92290678270753)-- (1.907996224326463,18.46007107391125);
+\draw (3.859693149033345,17.672230113479127)-- (4.,17.);
+\draw (4.,17.)-- (4.4237156547972605,17.054491178594844);
+\draw (4.4237156547972605,17.054491178594844)-- (4.316282796556514,17.50212808793128);
+\draw (4.316282796556514,17.50212808793128)-- (3.859693149033345,17.672230113479127);
+\draw (3.859693149033345,17.672230113479127)-- (5.,18.);
+\draw (4.4237156547972605,17.054491178594844)-- (5.,18.);
+\draw (4.316282796556514,17.50212808793128)-- (4.343141011116701,18.164630713749204);
+\draw (4.343141011116701,18.164630713749204)-- (3.859693149033345,17.672230113479127);
+\draw (5.,18.)-- (4.343141011116701,18.164630713749204);
+\begin{scriptsize}
+\draw [fill=qqqqff] (1.899043486139734,16.526279625577853) circle (1.5pt);
+\draw[color=qqqqff] (2.003514774429582,16.724602068970924) node {$A_1$};
+\draw [fill=qqqqff] (2.445160515530192,16.848578200300103) circle (1.5pt);
+\draw[color=qqqqff] (2.550451078939187,17.05043646314686) node {$B_1$};
+\draw [fill=qqqqff] (2.212389322675243,17.278309633263063) circle (1.5pt);
+\draw[color=qqqqff] (2.3177122259563765,17.48100334116506) node {$C_1$};
+\draw [fill=qqqqff] (1.8363673195685817,17.229718417745122) circle (1.5pt);
+\draw[color=qqqqff] (1.9453300611838795,17.42281862791936) node {$D_1$};
+\draw [fill=qqqqff] (1.907996224326463,18.46007107391125) circle (1.5pt);
+\draw[color=qqqqff] (2.0151517170787225,18.656334548728257) node {$E_1$};
+\draw [fill=qqqqff] (2.2213420608619714,17.92290678270753) circle (1.5pt);
+\draw[color=qqqqff] (2.3293491686055168,18.121035186867793) node {$F_1$};
+\draw [fill=qqqqff] (3.859693149033345,17.672230113479127) circle (1.5pt);
+\draw[color=qqqqff] (3.9468841968360504,17.83011162063928) node {$E$};
+\draw [fill=qqqqff] (4.,17.) circle (1.5pt);
+\draw[color=qqqqff] (4.086527508625736,17.16680588963827) node {$D$};
+\draw [fill=qqqqff] (4.4237156547972605,17.054491178594844) circle (1.5pt);
+\draw[color=qqqqff] (4.505457443994795,17.21335366023483) node {$C$};
+\draw [fill=qqqqff] (4.316282796556514,17.50212808793128) circle (1.5pt);
+\draw[color=qqqqff] (4.400724960152531,17.66719442355131) node {$F$};
+\draw [fill=qqqqff] (5.,18.) circle (1.5pt);
+\draw[color=qqqqff] (5.075667633802682,18.167582957464354) node {$B$};
+\draw [fill=qqqqff] (4.343141011116701,18.164630713749204) circle (1.5pt);
+\draw[color=qqqqff] (4.423998845450812,18.330500154552322) node {$A$};
+\end{scriptsize}
+\end{tikzpicture}
+Figure 3.12
+\\
+Answer: Yes the graphs are isomorphic because the vertices of each graph can be labeled in a way to directly match up with each other. In other words, in both graphs vertice A is connected to the same vertices, B is connected to the same vertices, and so on.
+
+
+
+
+
+
+
+%-----------5-------------%
+\question[3.12]
+\emph{Let $A=\{0,1,2,3,4\}\times \{0,1,2\}$, let $B=\{n | n$ is a positive factor of $144\}$, and let $f:A\rightarrow B$ with $f(a_1,a_2)=2^{a_1}\cdot 3^{a_2}$. Is $f$ one-to-one? Onto?}
+\\
+\\
+Answer:
+We know that $144=2^4 \times 3^2$ and can therfore conclude that any factor of $144$ will be a power of $2$ multiplied by a power of $3$. This shows that $f$ is onto because no factor of 144 is missed in the set.
+\\
+To prove that it it one-to-one find all $f$'s possible in the function. 
+\\
+we know that $A=\{0,1,2,3,4\}\times \{0,1,2\}$ and therefore we find: $\{(0,0),1\}, \{(0,1),3\},$ 
+\\
+$\{(0,2),9\}, \{(1,0),2\}, \{(1,1),6\}, \{(1,2),18\}, \{(2,0),4\}, \{(2,1),12\}, \{(2,2),36\}, \{(3,0),8\},$
+\\
+$\{(3,1),24\}, \{(3,2),72\}, \{(4,0),16\}, \{(4,1),19\}, \{(4,2),25\}$
+\\
+No set points to the same answer and so this proves that $f$ is one-to-one.
+
+
+
+
+
+%-----------6--------------%
+\question[3.13]
+\emph{Perhaps keeping pigeons in mind, show that if a simple graph has at least two vertices, then two of its vertices must have the same degree.}
+\\
+
+Answer: We know that if a graph has $n$ vertices, the possible degrees anyone vertex can have is $0 \rightarrow n-2$ or $1 \rightarrow n-1$ because no vertex can form an edge with itself, or form an edge with another vertex twice in a simple graph. There fore no matter what $n$ vertces you have, the degrees will always be at most $n-1$.
+\\
+Using the pigeonhole principle: if there are $n$ vertices and no more than $n-1$ degrees, at least two of the vertices has to have the same number of degrees.
+
+
+
+
+
+
+
+
+%--------7----------------------%
+\question[3.16]
+\emph{Consider a cube, and make a graph from it by assigning a vertex to each corner of the cube and an edge to each edge of the cube.}
+\\
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.3,0.72) rectangle (2.34,6.3);
+\draw (-0.54,3.46)-- (-0.52,2.46);
+\draw (-0.52,2.46)-- (0.32,2.44);
+\draw (0.32,2.44)-- (0.28,3.44);
+\draw (0.28,3.44)-- (-0.54,3.46);
+\draw (-0.54,3.46)-- (-0.12,4.1);
+\draw (-0.12,4.1)-- (0.54,4.04);
+\draw (0.28,3.44)-- (0.54,4.04);
+\draw (0.54,4.04)-- (0.68,2.94);
+\draw (0.32,2.44)-- (0.68,2.94);
+\draw (-0.12,4.1)-- (-0.02,2.96);
+\draw (-0.02,2.96)-- (-0.52,2.46);
+\draw (-0.02,2.96)-- (0.68,2.94);
+\begin{scriptsize}
+\draw [fill=qqqqff] (-0.54,3.46) circle (1.5pt);
+\draw [fill=qqqqff] (-0.52,2.46) circle (1.5pt);
+\draw [fill=qqqqff] (0.32,2.44) circle (1.5pt);
+\draw [fill=qqqqff] (0.28,3.44) circle (1.5pt);
+\draw [fill=qqqqff] (-0.12,4.1) circle (1.5pt);
+\draw [fill=qqqqff] (0.54,4.04) circle (1.5pt);
+\draw [fill=qqqqff] (0.68,2.94) circle (1.5pt);
+\draw [fill=qqqqff] (-0.02,2.96) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+\\
+\\
+	\begin{itemize}
+	\item \emph{What are the possible distances between two distinct vertices of the cube? (how many edges can be between them?)}
+    \\
+    Answer: The possible distances between two distinct vertices of a cube are $(1,2,3)$
+	
+	\item \emph{How many different length-$3$ paths go from one corner of the cube to the opposite corner? Why?}
+    \\
+    Answer: There are 6 different length-3 paths that go from one corner of the cube to the oppisite. We know there are six because if you start at one vertex on the graph you will have 3 paths to choose from, from the next vertex you will have 2 paths to choose from. On the final vertex you will only have one path you can take. $3 \times 2 \times 1=6$
+	
+	\item \emph{What is the average distance between any two distinct vertices of the cube? Explain?}
+    \\
+    Answer: The average distance between any two distinct vertices of the cube is $1.7143$ this is found by counting up how many vertices are length-1 apart, how many are length-2 apart, and how many are length-3 apart. We find that there are $12$ length-1, $12$ length-2, and $4$ length-3. This adds up to a total of 28 possible options. You then must find the average: $(12 \times 1) + (12 \times 2) + (4 \times 3)=48 ... \frac{48}{28}= 1.7143$.
+	\end{itemize}
+
+
+
+
+%------------8----------------%
+\question[3.18]
+\emph{How many vertices and edges does the complete tripartite graph $K_{m,n,p}$ have?}
+\\
+Answer: A complete tripartite graph $K_{m,n,p}$ has $m+n+p$ vertices and $(mp)+(np)
++(mn)$ edges.
+
+
+
+
+
+
+
+
+
+%--------------9---------------%
+\question[3.24]
+\emph{Encode $K_5$ as vertex/edge lists, as vertex/adjacency lists, and as an adjacency  matrix. Do the same with $P_5$. How do the different storage methods compare for these two graphs? Does this suggest any general guidelines to you?}
+\\
+Answer:
+\\
+\textbf{$K_5$}
+\\
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(2.0979511221313407,-0.020749308457794075) rectangle (7.633089457230838,4.917462343444698);
+\draw (5.028318476007536,3.868318476007537)-- (3.9249085464615603,2.8553519833095904);
+\draw (3.9249085464615603,2.8553519833095904)-- (3.8706424843527416,0.9198624347617286);
+\draw (3.8706424843527416,0.9198624347617286)-- (6.041284968705482,0.9198624347617286);
+\draw (6.041284968705482,0.9198624347617286)-- (6.095551030814301,2.8734406706791966);
+\draw (6.095551030814301,2.8734406706791966)-- (5.028318476007536,3.868318476007537);
+\draw (5.028318476007536,3.868318476007537)-- (3.8706424843527416,0.9198624347617286);
+\draw (5.028318476007536,3.868318476007537)-- (6.041284968705482,0.9198624347617286);
+\draw (6.095551030814301,2.8734406706791966)-- (3.9249085464615603,2.8553519833095904);
+\draw (6.095551030814301,2.8734406706791966)-- (3.8706424843527416,0.9198624347617286);
+\draw (6.041284968705482,0.9198624347617286)-- (3.9249085464615603,2.8553519833095904);
+\begin{scriptsize}
+\draw [fill=qqqqff] (5.028318476007536,3.868318476007537) circle (1.5pt);
+\draw [fill=qqqqff] (3.9249085464615603,2.8553519833095904) circle (1.5pt);
+\draw [fill=qqqqff] (3.8706424843527416,0.9198624347617286) circle (1.5pt);
+\draw [fill=qqqqff] (6.041284968705482,0.9198624347617286) circle (1.5pt);
+\draw [fill=qqqqff] (6.095551030814301,2.8734406706791966) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+\\
+Vertex/edge list: $\{\{1,2,3,4,5 \},\{1,2\},\{1,3\}, \{1,4\}, \{1,5\}, \{2,3\}, \{2,4\}, \{2,5\}, \{3,4\},$
+\\
+$\{3,5\}, \{4,5\} \}$
+\\
+Vertex/adjacency lists:
+$ \{\{1,2,3,4,5\},\{2,3,4,5\}, \{3,4,5\}, \{4,5\}\}$
+\\
+Adjacency matrix:
+\\
+\begin{matrix}
+  0 & 1 & 1 & 1 & 1  \\
+  1 & 0 & 1 & 1 & 1 \\
+  1 & 1 & 0 & 1 & 1 \\
+  1 & 1 & 1 & 0 & 1 \\
+  1 & 1 & 1 & 1 & 0
+ \end{matrix}
+\\
+\\
+\\
+\textbf{$P_5$}
+\\
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-0.03651398748219116,-0.7985628653508616) rectangle (5.498624347617297,4.13964878655163);
+\draw (0.4880579462363878,0.9198624347617272)-- (1.4829357515647272,0.9198624347617272);
+\draw (1.4829357515647272,0.9198624347617272)-- (2.749143867437159,0.9198624347617272);
+\draw (2.749143867437159,0.9198624347617272)-- (3.9249085464615607,0.9017737473921221);
+\draw (3.9249085464615607,0.9017737473921221)-- (5.100673225485961,0.9198624347617272);
+\begin{scriptsize}
+\draw [fill=qqqqff] (0.4880579462363878,0.9198624347617272) circle (1.5pt);
+\draw [fill=qqqqff] (1.4829357515647272,0.9198624347617272) circle (1.5pt);
+\draw [fill=qqqqff] (2.749143867437159,0.9198624347617272) circle (1.5pt);
+\draw [fill=qqqqff] (3.9249085464615607,0.9017737473921221) circle (1.5pt);
+\draw [fill=qqqqff] (5.100673225485961,0.9198624347617272) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+\\
+Vertex/edge list: $\{\{1,2,3,4,5 \},\{1,2\}, \{2,3\}, \{3,4\},\{4,5\} \}$
+\\
+Vertex/adjacency lists:
+$ \{1,2\}, \{2,3\}, \{3,4\},\{4,5\} \}$
+\\
+Adjacency matrix:
+\\
+\begin{matrix}
+  0 & 0 & 0 & 0 & 0  \\
+  1 & 0 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 & 0 \\
+  0 & 0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 1 & 0
+ \end{matrix}
+ 
+ \\
+ $k_5$ has a lot more degrees on each vertex than $P_5$ does. This is because  $k_5$ is a complete graph where every vertex is touching the other verteces.$P_5$ on the other hand is a line where each vertex is only has a degree of 1 or 2. This suggests to me that $K_5$ is more beneficial to work with thank $P_5$ because there are more edges and degrees on the graph.
+ 
+ %DO YOU AGREE?
+
+
+\end{questions}
+
+\end{document}

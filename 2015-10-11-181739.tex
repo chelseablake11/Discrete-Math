@@ -1,0 +1,499 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage{amssymb,amsmath,amsfonts,amsthm,graphicx,ifthen,mathrsfs, wrapfig}
+
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+
+\oddsidemargin=0in
+\evensidemargin=0in
+\textwidth=6.5in
+\topmargin=-1.0in
+\textheight=9.0in
+\parindent=0in
+
+
+\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+\special{papersize=8.5in,11in}
+\setlength{\pdfpageheight}{\paperheight}
+\setlength{\pdfpagewidth}{\paperwidth}
+
+\newcommand{\ud}{\,\mathrm{d}}
+\pointsinmargin
+
+Names: \underline{Chelsea Blake and Kelsey Mihachik\hspace{2in}}\\
+Math 212 Fall 2015, Tennenhouse \\
+
+
+\begin{center}
+\textbf{HW 7, due 10/16/15}\\
+\end{center}
+
+
+\begin{questions}
+
+
+\question[8,1]
+Write $F_1+F_3+F_5+ \ldots +F_{2n-1}$ in summation notation. Then show that it sums to $F_{2n}$.
+\\
+\textbf{Answer:}
+\\
+\begin{center}
+$F_n=\sum \limits_{k=n-2}^{n-1}F_k$
+\end{center}
+\\
+\\
+\begin{proof}
+We want to show that $F_1+F_3+F_5+ \ldots +F_{2n-1}=F_{2n}$. Let's do this using induction.
+\\
+For our \textbf{Base Case} we use $n=2 \; \; f_{2n-1}=3 \; \; F_1=1 \; \; 1+3=4 \; \; 2n=2(2)=4$ Our base case work.
+\\
+Next we say our \textbf{inductive hypothesis} is that we will assume true for any $n$ that is $k \ge n$ such that $F_1+F_3+F_5+ \ldots +F_{2k-1}=F_{2k}$
+\\
+In our \textbf{inductive step} we want to prove this is true for $k+1$. We want to show that $F_1+F_3+F_5+ \ldots +F_{2k+1}=F_{2k+2}$. Lets start with what we know from our hypothesis.
+\\
+$F_1+F_3+F_5+ \ldots +F_{2k-1}=F_{2k}$
+\\
+If we add $F_{2k+1}$ to each side we get
+\\
+$F_1+F_3+F_5+ \ldots +F_{2k-1}+F_{2k+}=F_{2k}+F_{2k+1}=F_1+F_3+F_5+ \ldots +F_{2k-1}=F_{2k}+F_{2k+1}=F_{2k+2}=F_{2(k+1)}$ 
+\end{proof}
+
+
+\question[8,3]
+Prove that $F_{3n}$ in the fibonacci sequence is even.
+\\
+\textbf{Answer:}
+\\
+\begin{proof}
+We can prove that $F_{3n}$ is always even for the fibonacci sequence using induction. We know that the fibonacci sequence is equal to $ f_n=f_{n-1}+f_{n-2} \forall n \ge 2$ We also know that $f_0=0 \; \; f_1=1$
+\\
+For our \textbf{Base Case} we will use $n=$ For $F_{3 \times 1}=f_3=2$ We know that two is even, so our base case works.
+\\
+Now we can assume for our \textbf{inductive hypothesis} that for any $k$ such that $k \ge n \; \; F_{3k}$ is even.
+\\
+For the \textbf{inductive step} we want to show that $f_{3n+1}$ is also even (also known as divisible by 2). So we start with $F_{3(n+1)}=F_{3n+3}$ we can separate out $F_{3n+3}$ to be equal to $F_{3n}+2f_{3n+1}$ We know from the inductive hypothesis that $F_{3n}$ is even, we also know that $2f_{3n+1}$is divisible by 2, so it is also even. Therefore we can say that if two even numbers are added the answer will be even. Therefor $f_{3n+1}$ is also even.
+\end{proof}
+
+\question[8,6]
+Consider the sequence $0,1,5,12,22,35,51,70,92,117,145,176,\ldots $. Find both a recurrence and a closed form for this sequence.
+\\
+\textbf{Answer:}
+\\
+\textbf{Recurrence:}
+\\
+$a_0=0 \; a_1=a_0+1=1 \; a_2=a_1+4=5 \; a_3=a_2+7=12 \; a_4=a_3+10=22$
+\\
+Sequence of difference: $\{0,1,4,7,10... \}$ 
+\\
+$a_0=0 \; a_1= 0+1=1 \; a_2=a_1+3=4 \; a_3=a_2+3=7 \; a_4=a_3+3=10 $
+\\
+$A_n = 0$ for $n = 0$ and $A_{n-1} + 3(n-1) + 1  \forall n > 0$
+\\
+if $n=1$ and $A_{n-1} + 3(n-1) + 1$ We get $A_{1-1} + 3(1-1) + 1=1$
+\\
+if $n=2$ and $A_{n-1} + 3(n-1) + 1$ We get $A_{2-1} + 3(2-1) + 1=4$
+\\
+and so on.. so we know $A_n = 0$ for $n = 0$ and $A_{n-1} + 3(n-1) + 1  \forall n > 0$ is true.
+\\
+\textbf{Closed Form:}
+\\
+$A_n=\frac{3(3n-1)}{2}$
+
+
+
+\question[8,7]
+Find a closed form for $a_0=-1,a_1=1,a_n=2a_{n-1}-a_{n-2}$.
+\\
+\textbf{Answer:}
+\\
+We know that $a_0=-1,a_1=1, a_2= 3,a_3=5$
+\\
+$A_{n}=2^n-(A_{n-1})$
+
+
+
+
+
+
+
+
+
+\question
+Look up the \textit{Towers of Hanoi} and play it a few times. 
+\begin{parts}
+	\part Explain how the solution (i.e. the strategy using the fewest number of moves) to the game with $n$ discs can be determined from the solution to the game using $(n-1)$ discs.
+    \\
+    \textbf{Answer:}
+    \\
+    We see that a game with $3$ discs can be found in $7$ moves at the minimum. A game with $4$ discs can be found in $15$ moves. A game with $5$ discs can be found in $31$ moves and so on. Giving the sequence $a_n=\{7,15,31,63,\}$ Starting at $n=3$ so we see that $a_n=2(A_{n-1})+1$ So if we know what $n-1$ is we can find $n$ by multiplying it by $2$ and adding $1$.
+
+	\part Let $m_n$ be the fewest number of moves required to solve the game on $n$ discs. Write out $m_n$ as a recurrence relation.\\
+
+
+\textbf{Answer:}
+\\
+\textbf{Recurrence:}
+\\
+$a_0=0 \; a_1=2(a_0)+1=1 \; a_2=2(a_1)+1=3 \; a_3=2(a_2)+1=7 \; a_4= 2(a_3)+1=15$
+\\
+Sequence of difference: $\{0,1,3,7,15,... \}$ 
+\\
+$a_0=0 \; a_1= 0+1=1 \; a_2=2+1=3 \; a_3=6+1=7 \; a_4=14+1=15 $
+\\
+$A_n = 0$ for $n = 0$ and $2(A_{n-1}) + 1  \forall n > 0$
+\\
+if $n=1$ and $2(A_{n-1}) + 1$ We get $2(A_{1-1}) + 1=1$
+\\
+if $n=2$ and $2(A_{n-1}) + 1$ We get $2(A_{2-1}) + 1=3$
+\\
+and so on.. so we know $A_n = 0$ for $n = 0$ and $2(A_{n-1}) + 1  \forall n > 0$ is true.
+\\
+
+
+
+
+
+
+
+\end{parts}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\question[10,2]
+Show that the average degree of a tree is less than $2$.
+\\
+\textbf{Answer:}
+\begin{proof}
+Consider a tree, $T$ which has $k$ vertices. $T$ will then have $k-1$ edges. Since the sum of degrees is equal to $2(edges)$, or $2(k-1)$ The formula for the average degrees of any tree $T$ is then:
+\begin{center}
+$\frac{2(k-1)}{k}$\\
+\end{center}When we take the limit of this formula, we see that as k approaches infinity, the function approaches 2. This means that the average number of degrees is never equal to or greater than 2, and therefore the average degree of a tree is always less than 2.
+\end{proof}
+
+
+\question[10,7]
+Find a minimum-weight spanning tree of the lefthand graph (p.306) using Kruskal's Algorithm.\\
+\\
+\textbf{Answer:}
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.22,-1.94) rectangle (3.14,3.2);
+\draw (-1.52,-1.04)-- (1.3,-1.04);
+\draw (1.3,-1.04)-- (2.22,-0.2);
+\draw (-0.76,0.94)-- (0.3,1.74);
+\draw (0.3,1.74)-- (-1.52,2.52);
+\draw (-1.52,2.52)-- (-1.52,-1.04);
+\draw (-0.76,0.94)-- (-1.52,-1.04);
+\draw (0.58,-0.08)-- (1.3,-1.04);
+\draw (-1.52,-1.04)-- (0.58,-0.08);
+\draw (0.58,-0.08)-- (-0.76,0.94);
+\draw (0.58,-0.08)-- (0.3,1.74);
+\draw (0.58,-0.08)-- (2.22,-0.2);
+\draw (1.06,2.78)-- (1.5,1.68);
+\draw (1.5,1.68)-- (0.3,1.74);
+\draw (1.5,1.68)-- (2.22,-0.2);
+\draw (2.22,-0.2)-- (0.3,1.74);
+\draw (1.06,2.78)-- (0.3,1.74);
+\draw (1.06,2.78)-- (-1.52,2.52);
+\draw (-0.76,0.94)-- (-1.52,2.52);
+\draw (1.06,2.78)-- (1.5,1.68);
+\draw (0.46,2.44) node[anchor=north west] {3};
+\draw (-0.34,3.06) node[anchor=north west] {3};
+\draw (-0.7,2.06) node[anchor=north west] {3};
+\draw (1.42,2.46) node[anchor=north west] {3};
+\draw (1.02,1.6) node[anchor=north west] {4};
+\draw (-0.26,1.34) node[anchor=north west] {4};
+\draw (-0.92,0.2) node[anchor=north west] {4};
+\draw (1.28,0.14) node[anchor=north west] {4};
+\draw (0.56,0.78) node[anchor=north west] {3};
+\draw (-0.32,0.52) node[anchor=north west] {3};
+\draw (-0.18,-1.08) node[anchor=north west] {2};
+\draw (1.88,-0.66) node[anchor=north west] {2};
+\draw (1.94,1.16) node[anchor=north west] {2};
+\draw (0.72,-0.54) node[anchor=north west] {1};
+\draw (-1.26,1.64) node[anchor=north west] {1};
+\draw (1.08,0.84) node[anchor=north west] {1};
+\draw (-0.5,-0.18) node[anchor=north west] {7};
+\draw (-1.96,0.82) node[anchor=north west] {9};
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.52,-1.04) circle (1.5pt);
+\draw[color=qqqqff] (-1.38,-0.76) node {$A$};
+\draw [fill=qqqqff] (1.3,-1.04) circle (1.5pt);
+\draw[color=qqqqff] (1.44,-0.76) node {$B$};
+\draw [fill=qqqqff] (2.22,-0.2) circle (1.5pt);
+\draw[color=qqqqff] (2.36,0.08) node {$C$};
+\draw [fill=qqqqff] (-0.76,0.94) circle (1.5pt);
+\draw[color=qqqqff] (-0.62,1.22) node {$D$};
+\draw [fill=qqqqff] (0.3,1.74) circle (1.5pt);
+\draw[color=qqqqff] (0.44,2.02) node {$E$};
+\draw [fill=qqqqff] (-1.52,2.52) circle (1.5pt);
+\draw[color=qqqqff] (-1.38,2.8) node {$F$};
+\draw [fill=qqqqff] (0.58,-0.08) circle (1.5pt);
+\draw [fill=qqqqff] (1.5,1.68) circle (1.5pt);
+\draw [fill=qqqqff] (1.06,2.78) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture}\\
+
+
+
+Ordered edges graph:\\
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.22,-1.72) rectangle (3.36,3.2);
+\draw (-1.52,-1.04)-- (1.3,-1.04);
+\draw (1.3,-1.04)-- (2.22,-0.2);
+\draw (-0.76,0.94)-- (0.3,1.74);
+\draw (0.3,1.74)-- (-1.52,2.52);
+\draw (-1.52,2.52)-- (-1.52,-1.04);
+\draw (-0.76,0.94)-- (-1.52,-1.04);
+\draw (0.58,-0.08)-- (1.3,-1.04);
+\draw (-1.52,-1.04)-- (0.58,-0.08);
+\draw (0.58,-0.08)-- (-0.76,0.94);
+\draw (0.58,-0.08)-- (0.3,1.74);
+\draw (0.58,-0.08)-- (2.22,-0.2);
+\draw (1.06,2.78)-- (1.5,1.68);
+\draw (1.5,1.68)-- (0.3,1.74);
+\draw (1.5,1.68)-- (2.22,-0.2);
+\draw (2.22,-0.2)-- (0.3,1.74);
+\draw (1.06,2.78)-- (0.3,1.74);
+\draw (1.06,2.78)-- (-1.52,2.52);
+\draw (-0.76,0.94)-- (-1.52,2.52);
+\draw (1.06,2.78)-- (1.5,1.68);
+\draw (0.46,2.44) node[anchor=north west] {3};
+\draw (-0.34,3.06) node[anchor=north west] {3};
+\draw (-0.7,2.06) node[anchor=north west] {3};
+\draw (1.42,2.46) node[anchor=north west] {3};
+\draw (1.02,1.6) node[anchor=north west] {4};
+\draw (-0.26,1.34) node[anchor=north west] {4};
+\draw (-0.92,0.2) node[anchor=north west] {4};
+\draw (1.28,0.14) node[anchor=north west] {4};
+\draw (0.56,0.78) node[anchor=north west] {3};
+\draw (-0.32,0.52) node[anchor=north west] {3};
+\draw (-0.18,-1.08) node[anchor=north west] {2};
+\draw (1.88,-0.66) node[anchor=north west] {2};
+\draw (1.94,1.16) node[anchor=north west] {2};
+\draw (0.72,-0.54) node[anchor=north west] {1};
+\draw (-1.26,1.64) node[anchor=north west] {1};
+\draw (1.08,0.84) node[anchor=north west] {1};
+\draw (-0.5,-0.18) node[anchor=north west] {5};
+\draw (-1.96,0.82) node[anchor=north west] {6};
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.52,-1.04) circle (1.5pt);
+\draw[color=qqqqff] (-1.38,-0.76) node {$A$};
+\draw [fill=qqqqff] (1.3,-1.04) circle (1.5pt);
+\draw[color=qqqqff] (1.44,-0.76) node {$B$};
+\draw [fill=qqqqff] (2.22,-0.2) circle (1.5pt);
+\draw[color=qqqqff] (2.36,0.08) node {$C$};
+\draw [fill=qqqqff] (-0.76,0.94) circle (1.5pt);
+\draw[color=qqqqff] (-0.62,1.22) node {$D$};
+\draw [fill=qqqqff] (0.3,1.74) circle (1.5pt);
+\draw[color=qqqqff] (0.44,2.02) node {$E$};
+\draw [fill=qqqqff] (-1.52,2.52) circle (1.5pt);
+\draw[color=qqqqff] (-1.38,2.8) node {$F$};
+\draw [fill=qqqqff] (0.58,-0.08) circle (1.5pt);
+\draw [fill=qqqqff] (1.5,1.68) circle (1.5pt);
+\draw [fill=qqqqff] (1.06,2.78) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture}\\
+
+
+
+H Graph:\\
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.72,-1.74) rectangle (3.46,3.4);
+\draw (0.58,-0.08)-- (1.3,-1.04);
+\draw (2.22,-0.2)-- (0.3,1.74);
+\draw (-0.76,0.94)-- (-1.52,2.52);
+\draw (0.72,-0.54) node[anchor=north west] {1};
+\draw (-1.26,1.64) node[anchor=north west] {1};
+\draw (1.08,0.84) node[anchor=north west] {1};
+\draw (-1.96,0.82) node[anchor=north west] {6};
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.52,-1.04) circle (1.5pt);
+\draw[color=qqqqff] (-1.38,-0.76) node {$A$};
+\draw [fill=qqqqff] (1.3,-1.04) circle (1.5pt);
+\draw[color=qqqqff] (1.44,-0.76) node {$B$};
+\draw [fill=qqqqff] (2.22,-0.2) circle (1.5pt);
+\draw[color=qqqqff] (2.36,0.08) node {$C$};
+\draw [fill=qqqqff] (-0.76,0.94) circle (1.5pt);
+\draw[color=qqqqff] (-0.62,1.22) node {$D$};
+\draw [fill=qqqqff] (0.3,1.74) circle (1.5pt);
+\draw[color=qqqqff] (0.44,2.02) node {$E$};
+\draw [fill=qqqqff] (-1.52,2.52) circle (1.5pt);
+\draw[color=qqqqff] (-1.38,2.8) node {$F$};
+\draw [fill=qqqqff] (0.58,-0.08) circle (1.5pt);
+\draw [fill=qqqqff] (1.5,1.68) circle (1.5pt);
+\draw [fill=qqqqff] (1.06,2.78) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture}\\
+
+Continue adding edges without creating cycles until all vertices have been connected\\
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.22,-1.7) rectangle (3.32,3.2);
+\draw (-1.52,-1.04)-- (1.3,-1.04);
+\draw (1.3,-1.04)-- (2.22,-0.2);
+\draw (0.58,-0.08)-- (1.3,-1.04);
+\draw (1.5,1.68)-- (2.22,-0.2);
+\draw (2.22,-0.2)-- (0.3,1.74);
+\draw (-0.76,0.94)-- (-1.52,2.52);
+\draw (-0.18,-1.08) node[anchor=north west] {2};
+\draw (1.88,-0.66) node[anchor=north west] {2};
+\draw (1.94,1.16) node[anchor=north west] {2};
+\draw (0.72,-0.54) node[anchor=north west] {1};
+\draw (-1.26,1.64) node[anchor=north west] {1};
+\draw (1.08,0.84) node[anchor=north west] {1};
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.52,-1.04) circle (1.5pt);
+\draw[color=qqqqff] (-1.38,-0.76) node {$A$};
+\draw [fill=qqqqff] (1.3,-1.04) circle (1.5pt);
+\draw[color=qqqqff] (1.44,-0.76) node {$B$};
+\draw [fill=qqqqff] (2.22,-0.2) circle (1.5pt);
+\draw[color=qqqqff] (2.36,0.08) node {$C$};
+\draw [fill=qqqqff] (-0.76,0.94) circle (1.5pt);
+\draw[color=qqqqff] (-0.62,1.22) node {$D$};
+\draw [fill=qqqqff] (0.3,1.74) circle (1.5pt);
+\draw[color=qqqqff] (0.44,2.02) node {$E$};
+\draw [fill=qqqqff] (-1.52,2.52) circle (1.5pt);
+\draw[color=qqqqff] (-1.38,2.8) node {$F$};
+\draw [fill=qqqqff] (0.58,-0.08) circle (1.5pt);
+\draw [fill=qqqqff] (1.5,1.68) circle (1.5pt);
+\draw [fill=qqqqff] (1.06,2.78) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture}\\
+
+Final minimum weighted graph:\\
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.22,-1.64) rectangle (3.,3.2);
+\draw (-1.52,-1.04)-- (1.3,-1.04);
+\draw (1.3,-1.04)-- (2.22,-0.2);
+\draw (0.58,-0.08)-- (1.3,-1.04);
+\draw (0.58,-0.08)-- (-0.76,0.94);
+\draw (1.5,1.68)-- (2.22,-0.2);
+\draw (2.22,-0.2)-- (0.3,1.74);
+\draw (1.06,2.78)-- (0.3,1.74);
+\draw (-0.76,0.94)-- (-1.52,2.52);
+\draw (0.46,2.44) node[anchor=north west] {3};
+\draw (-0.32,0.52) node[anchor=north west] {3};
+\draw (-0.18,-1.08) node[anchor=north west] {2};
+\draw (1.88,-0.66) node[anchor=north west] {2};
+\draw (1.94,1.16) node[anchor=north west] {2};
+\draw (0.72,-0.54) node[anchor=north west] {1};
+\draw (-1.26,1.64) node[anchor=north west] {1};
+\draw (1.08,0.84) node[anchor=north west] {1};
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.52,-1.04) circle (1.5pt);
+\draw[color=qqqqff] (-1.38,-0.76) node {$A$};
+\draw [fill=qqqqff] (1.3,-1.04) circle (1.5pt);
+\draw[color=qqqqff] (1.44,-0.76) node {$B$};
+\draw [fill=qqqqff] (2.22,-0.2) circle (1.5pt);
+\draw[color=qqqqff] (2.36,0.08) node {$C$};
+\draw [fill=qqqqff] (-0.76,0.94) circle (1.5pt);
+\draw[color=qqqqff] (-0.62,1.22) node {$D$};
+\draw [fill=qqqqff] (0.3,1.74) circle (1.5pt);
+\draw[color=qqqqff] (0.44,2.02) node {$E$};
+\draw [fill=qqqqff] (-1.52,2.52) circle (1.5pt);
+\draw[color=qqqqff] (-1.38,2.8) node {$F$};
+\draw [fill=qqqqff] (0.58,-0.08) circle (1.5pt);
+\draw [fill=qqqqff] (1.5,1.68) circle (1.5pt);
+\draw [fill=qqqqff] (1.06,2.78) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{center}
+
+
+
+
+
+
+
+
+
+
+\question[10,16]
+Create a binary decision tree that reflects the way a coin-sorting machine deals with standard U.S. coins, (penny, nickel, dime, quarter, half-dollar, and dollar).\\
+
+\textbf{Answer:}
+\\
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm, scale=.15]
+\clip(151.995869935532,-150.01136490233307) rectangle (251.58635571165846,-101.24993328530226);
+\draw (180.,-120.)-- (200.,-110.);
+\draw (200.,-110.)-- (220.,-120.);
+\draw (220.,-120.)-- (230.,-130.);
+\draw (220.,-120.)-- (210.,-130.);
+\draw (230.,-130.)-- (220.,-140.);
+\draw (230.,-130.)-- (240.,-140.);
+\draw (180.,-120.)-- (190.,-130.);
+\draw (180.,-120.)-- (170.,-130.);
+\draw (170.,-130.)-- (180.,-140.);
+\draw (170.,-130.)-- (160.,-140.);
+\draw (191.9699057487869,-105.21287649092667) node[anchor=north west] {What is the coin?};
+\draw (214.3691499544901,-114.51717793021876) node[anchor=north west] {Quarter or more};
+\draw (204.37564100117638,-131.74736578075968) node[anchor=north west] {Quarter};
+\draw (230.91013029100935,-127.61212069662987) node[anchor=north west] {Not Quarter};
+\draw (210.23390487036028,-142.25778036958965) node[anchor=north west] {Half Dollar};
+\draw (241.0759411228285,-141.91317661257884) node[anchor=north west] {Dollar};
+\draw (170.25986905710536,-114.68947980872417) node[anchor=north west] {Dime or Less};
+\draw (188.52386817867873,-131.74736578075968) node[anchor=north west] {Dime};
+\draw (158.88794507574838,-126.92291318260823) node[anchor=north west] {Not Dime};
+\draw (179.04726486088123,-141.91317661257884) node[anchor=north west] {Nickel};
+\draw (154.75269999161856,-142.08547849108425) node[anchor=north west] {Penny};
+\begin{scriptsize}
+\draw [fill=qqqqff] (200.,-110.) circle (1.5pt);
+\draw [fill=qqqqff] (180.,-120.) circle (1.5pt);
+\draw [fill=qqqqff] (220.,-120.) circle (1.5pt);
+\draw [fill=qqqqff] (190.,-130.) circle (1.5pt);
+\draw [fill=qqqqff] (210.,-130.) circle (1.5pt);
+\draw [fill=qqqqff] (170.,-130.) circle (1.5pt);
+\draw [fill=qqqqff] (230.,-130.) circle (1.5pt);
+\draw [fill=qqqqff] (220.,-140.) circle (1.5pt);
+\draw [fill=qqqqff] (240.,-140.) circle (1.5pt);
+\draw [fill=qqqqff] (160.,-140.) circle (1.5pt);
+\draw [fill=qqqqff] (180.,-140.) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+\question[10,23]
+Show that a graph is connected (for every pair of vertices $u,v$ there is a path between them) if and only if it has a spanning tree.
+\\
+\textbf{Answer:}
+\\
+
+\begin{proof}
+
+A graph is connected if and only if it has a spanning tree. First let's consider a connected graph, $G$. For a graph to be connected, each pair of vertices must have a path between them. If $G$ is not a tree already, then it must contain a cycle. In this case, we can take away vertices in such a way that removes these cycles until we are left with a spanning tree. Second, let's consider a spanning tree, $T$. $T$ contains vertices in such a way that there are no cycles and only paths between vertices. Since there is a path between any two vertices of the spanning tree, it is connected. Therefore, a graph is connected if and only if it has a spanning tree.
+
+\end{proof}
+
+
+
+\end{questions}
+
+\end{document}
+

@@ -1,0 +1,225 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage{amssymb,amsmath,amsfonts,amsthm,graphicx,ifthen,mathrsfs, wrapfig}
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+
+\oddsidemargin=0in
+\evensidemargin=0in
+\textwidth=6.5in
+\topmargin=-1.0in
+\textheight=9.0in
+\parindent=0in
+
+
+\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+\special{papersize=8.5in,11in}
+\setlength{\pdfpageheight}{\paperheight}
+\setlength{\pdfpagewidth}{\paperwidth}
+
+\newcommand{\ud}{\,\mathrm{d}}
+\pointsinmargin
+
+Names: \underline{Chelsea Blake Kelsey Mihachik \hspace{3in}}\\
+Math 212 Fall 2015, Tennenhouse \\
+
+
+\begin{center}
+\textbf{HW 15, due 12/2/15}\\
+\end{center}
+
+
+\begin{questions}
+
+
+\question
+We can denote a Turing Machine by a list of states, the alphabet used, and a list of instructions for what is done in each state when each symbol is encountered. For example, following is a Turing Machine that takes as input two numbers (represented by two sequences of $1$s separated by a $0$), sums them, and then halts. Assuming we begin at the $0$ we have states $s_1,s_2$, alphabet $\{0,1\}$, and instructions:
+\\$s_1 0 \rightarrow 1 s_2 L$
+\\$s_2 1 \rightarrow s_2 1 L$
+\\$s_2 0 \rightarrow s_1 0 R$
+\\$s_1 1 \rightarrow s_1 0 h$
+\\ \\ Define a Turing Machine that takes two numbers and subtracts them. You may assume the first number is always larger or always smaller, whichever you prefer.
+\\
+\textbf{Solution:}\\
+Pick two numbers you want to subtract, for example 3-2, on the tape the first spot will always be an x, the next n spots will be 1's such that 1n will equal the highest number you are subtracting (in this case 3). The next spot after the 1's will be a 0. Put 1's in the next k spots such that 1k= the smallest number you are subtracting(in this case 2). in the final spot put an x and end the tape. Then follow these rules: 
+\\$s_1 X \rightarrow s_2 X L$
+\\$s_1 0 \rightarrow s_2 0 R$
+\\$s_1 1 \rightarrow s_1 0 R$
+\\$s_2 X \rightarrow s_2 X H$
+\\$s_2 0 \rightarrow s_2 X H$
+\\$s_2 1 \rightarrow s_3 X L$
+\\$s_3 X \rightarrow s_4 X R$
+\\$s_3 0 \rightarrow s_3 0 L$
+\\$s_3 1 \rightarrow s_3 1 L$
+\\$s_4 X \rightarrow s_4 X H$
+\\$s_4 0 \rightarrow s_4 0 H$
+\\$s_4 1 \rightarrow s_1 X R$
+\\
+When you have reached a halt, count the number of 1's in between your x's and you will recieve the answer to the subtraction problem.
+
+\question
+Define a Turing Machine with as few states as possible that begins with a tape of all $0$s and creates an ever-expanding sequence of $1$s growing in both directions.
+\\
+\textbf{Solution:}\\
+\\$s_1 0 \rightarrow  1 s_2 R$
+\\$s_1 1 \rightarrow 1 s_1 L$
+\\$s_2 0 \rightarrow 1 s_1 L$
+\\$s_2 1 \rightarrow 1 s_2 R$
+\\
+Starting in $s_1$ on a zero (because the tape is all zeros) we will change the 0 to a 1, move one to the Right and go to $s_2$. The next spot would also be a 0, which we would change to 1 move to the left and go to $s_1$ the spot will now be on a 1, therefore we will keep it a 1, stay in $s_1$ and move to the left. This spot will have a 0, will turn to a 1 move to the right and go to $s_2$. This spot will be a 1 so it will stay a one, move to the right and stay in $s_2$. This will continue until it hits a 0, then it will turn the 0 to a 1, move to the left and go to $s_1$ and so the pattern will continue growing in both directions.
+
+
+\question
+Define a Turing Machine that begins with two numbers (as sequences of $1$s separated by a $0$) and prints `$<$', `$>$', or `$=$' somewhere on the tape, whichever is appropriate. The numbers need not remain on the tape and you may use whatever alphabet you like.
+\\
+This Turing Machine will be based off of the subtraction machine made in question 1. You will follow the same rules as the subtraction machine, however instead of halting we will add another step. In the subtraction machine we had to specify that the larger number would be put first for the machine to work, we will not follow this rule for this machine. If the first number is smaller than the second then the outcome will produce a string of 0's, instead of a number. Therefore we know for this machine that if we end up with a string of zeros, it is less than. If the tape has one 0 it is equal, and if there's a string of one or more 1's it is greater than. Therefore the rules will look like this:
+
+\\$s_1 X \rightarrow s_2 X L$
+\\$s_1 0 \rightarrow s_2 0 R$
+\\$s_1 1 \rightarrow s_1 0 R$
+\\$s_2 X \rightarrow s_5 X R$
+\\$s_2 0 \rightarrow s_5 X R$
+\\$s_2 1 \rightarrow s_3 X L$
+\\$s_3 X \rightarrow s_4 X R$
+\\$s_3 0 \rightarrow s_3 0 L$
+\\$s_3 1 \rightarrow s_3 1 L$
+\\$s_4 X \rightarrow s_5 X R$
+\\$s_4 0 \rightarrow s_5 0 R$
+\\$s_4 1 \rightarrow s_1 X R$
+
+\\$s_5 X \rightarrow s_5 X R$
+\\$s_5 0 \rightarrow s_6 0 R$
+\\$s_5 1 \rightarrow s_5 > H$
+\\$s_6 X \rightarrow s_6 = H$
+\\$s_6 0 \rightarrow s_6 < H$
+\\
+When you reached a halt, a "$<$","$=$" or "$<$" will be displayed somewhere on tape depending on the appropriate answer.
+
+
+
+
+
+
+\question
+Conway's \emph{Game of Life} is a two dimensional \emph{cellular automaton}, i.e. a set of rules that recursively acts on a grid with binary values. Each square has eight neighbors. We consider a space `alive' if it is shaded and `dead' otherwise. 
+\begin{itemize}
+\item[i] Any live cell with fewer than two living neighbors dies on the next iteration.
+\item[ii] If a live cell has more than three living neighbors then it dies from overcrowding.
+\item[iii] A dead cell with exactly three living neighbors becomes alive in the next iteration.
+\end{itemize}
+\begin{itemize}
+\item[a] Consider the initial position below. Determine the next two iterations.
+\begin{center}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.5]
+\clip(-3.72,-0.66) rectangle (4.16,6.42);
+\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (-2.,2.) -- (-1.,2.) -- (-1.,3.) -- (-2.,3.) -- cycle;
+\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (-1.,2.) -- (0.,2.) -- (0.,3.) -- (-1.,3.) -- cycle;
+\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (0.,2.) -- (1.,2.) -- (1.,3.) -- (0.,3.) -- cycle;
+\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (-1.,3.) -- (0.,3.) -- (0.,4.) -- (-1.,4.) -- cycle;
+\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (0.,3.) -- (1.,3.) -- (1.,4.) -- (0.,4.) -- cycle;
+\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (1.,3.) -- (2.,3.) -- (2.,4.) -- (1.,4.) -- cycle;
+\draw (-3.,6.)-- (-3.,0.);
+\draw (-3.,0.)-- (3.,0.);
+\draw (3.,0.)-- (3.,6.);
+\draw (3.,6.)-- (-3.,6.);
+\draw (-3.,5.)-- (3.,5.);
+\draw (3.,4.)-- (-3.,4.);
+\draw (-3.,3.)-- (3.,3.);
+\draw (3.,2.)-- (-3.,2.);
+\draw (-3.,1.)-- (3.,1.);
+\draw (-2.,6.)-- (-2.,0.);
+\draw (-1.,6.)-- (-1.,0.);
+\draw (0.,6.)-- (0.,0.);
+\draw (1.,0.)-- (1.,6.);
+\draw (2.,6.)-- (2.,0.);
+\draw [color=zzttqq] (-2.,2.)-- (-1.,2.);
+\draw [color=zzttqq] (-1.,2.)-- (-1.,3.);
+\draw [color=zzttqq] (-1.,3.)-- (-2.,3.);
+\draw [color=zzttqq] (-2.,3.)-- (-2.,2.);
+\draw [color=zzttqq] (-1.,2.)-- (0.,2.);
+\draw [color=zzttqq] (0.,2.)-- (0.,3.);
+\draw [color=zzttqq] (0.,3.)-- (-1.,3.);
+\draw [color=zzttqq] (-1.,3.)-- (-1.,2.);
+\draw [color=zzttqq] (0.,2.)-- (1.,2.);
+\draw [color=zzttqq] (1.,2.)-- (1.,3.);
+\draw [color=zzttqq] (1.,3.)-- (0.,3.);
+\draw [color=zzttqq] (0.,3.)-- (0.,2.);
+\draw [color=zzttqq] (-1.,3.)-- (0.,3.);
+\draw [color=zzttqq] (0.,3.)-- (0.,4.);
+\draw [color=zzttqq] (0.,4.)-- (-1.,4.);
+\draw [color=zzttqq] (-1.,4.)-- (-1.,3.);
+\draw [color=zzttqq] (0.,3.)-- (1.,3.);
+\draw [color=zzttqq] (1.,3.)-- (1.,4.);
+\draw [color=zzttqq] (1.,4.)-- (0.,4.);
+\draw [color=zzttqq] (0.,4.)-- (0.,3.);
+\draw [color=zzttqq] (1.,3.)-- (2.,3.);
+\draw [color=zzttqq] (2.,3.)-- (2.,4.);
+\draw [color=zzttqq] (2.,4.)-- (1.,4.);
+\draw [color=zzttqq] (1.,4.)-- (1.,3.);
+\end{tikzpicture}
+\end{center}
+\\
+\textbf{Solution:}
+\\
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(2.78,3.3928) rectangle (10.98,9.0328);
+\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (5.028559322011077,6.733386490717869) -- (5.041113281690897,6.159944043142599) -- (7.329285333049702,6.159858747170107) -- (7.332297268765102,6.723151230309255) -- cycle;
+\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (4.280385355553041,6.159972400725337) -- (4.280356143954354,5.57279799230439) -- (6.500244121434492,5.540125716384412) -- (6.500213180625106,6.159889652414083) -- cycle;
+\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (5.7615370493424845,5.540094344788548) -- (5.770867518171629,4.990003890216016) -- (6.500271422169868,4.993274759740672) -- (6.500244121434492,5.540125716384412) -- cycle;
+\draw (3.54,8.04)-- (3.54,4.4);
+\draw (3.54,4.4)-- (8.02,4.44);
+\draw (8.02,4.44)-- (8.,8.);
+\draw (8.,8.)-- (3.54,8.04);
+\draw (4.280478555486297,8.033358936722095)-- (4.280298126743723,4.406609804703069);
+\draw (5.000241288480486,8.026903665574165)-- (5.0793415703467515,4.413744121163811);
+\draw (5.719465948163191,8.020453220195845)-- (5.780535671582304,4.4200047827819855);
+\draw (6.500120644240243,8.013451832787084)-- (6.500299721004383,4.426431247508968);
+\draw (7.339156294613234,8.005926849375665)-- (7.320055799123157,4.433750498206457);
+\draw (3.54,7.42)-- (8.003368155278523,7.400468360422914);
+\draw (3.54,6.74)-- (8.007190153069276,6.720152753668928);
+\draw (3.54,6.16)-- (8.010338014833517,6.159833359633896);
+\draw (3.54,4.98)-- (8.,5.);
+\draw (3.54,5.54)-- (8.013819157329966,5.540189995265899);
+\draw [color=zzttqq] (5.028559322011077,6.733386490717869)-- (5.041113281690897,6.159944043142599);
+\draw [color=zzttqq] (5.041113281690897,6.159944043142599)-- (7.329285333049702,6.159858747170107);
+\draw [color=zzttqq] (7.329285333049702,6.159858747170107)-- (7.332297268765102,6.723151230309255);
+\draw [color=zzttqq] (7.332297268765102,6.723151230309255)-- (5.028559322011077,6.733386490717869);
+\draw [color=zzttqq] (4.280385355553041,6.159972400725337)-- (4.280356143954354,5.57279799230439);
+\draw [color=zzttqq] (4.280356143954354,5.57279799230439)-- (6.500244121434492,5.540125716384412);
+\draw [color=zzttqq] (6.500244121434492,5.540125716384412)-- (6.500213180625106,6.159889652414083);
+\draw [color=zzttqq] (6.500213180625106,6.159889652414083)-- (4.280385355553041,6.159972400725337);
+\draw [color=zzttqq] (5.7615370493424845,5.540094344788548)-- (5.770867518171629,4.990003890216016);
+\draw [color=zzttqq] (5.770867518171629,4.990003890216016)-- (6.500271422169868,4.993274759740672);
+\draw [color=zzttqq] (6.500271422169868,4.993274759740672)-- (6.500244121434492,5.540125716384412);
+\draw [color=zzttqq] (6.500244121434492,5.540125716384412)-- (5.7615370493424845,5.540094344788548);
+\end{tikzpicture}
+
+\item[b] Consider a 3x3 board to be a torus instead of a plane. Find a starting configuration that has living cells after the first iteration but will eventually leave all cells dead, or explain why no such configuration exists.\\
+\textbf{Solution:}\\
+If the 3x3 board was a torus instead of a plane, there wouldn't be a starting configuration that would eventually leave all cells dead. This would be because the gliders in Conway's Game of Life would always be in constant motion or at a standstill but still living with other gliders.
+
+
+
+\item[c] Explain what \emph{Turing Complete} means (reference a book or website, not Wikipedia or Mathworld) and explain why The Game of Life is Turing Complete.\\  
+
+\textbf{Solution:}\\
+If something is Turing complete, it can only be computed by using a Turing-equivalent computing system. It requires the power of a Turing machine or something of equivalent power to be solved. The Game of Life is Turing Complete because by creating patterns that emulate logic gates and counters, you can build up from these and do any computation that could be done by using any computer.\\
+
+Sources:\\
+http://scienceblogs.com/goodmath/2007/01/05/turing-equivalent-vs-turing-co/\\
+http://www.math.cornell.edu/~lipa/mec/lesson6.html
+
+
+\end{itemize}
+
+
+
+\end{questions}
+
+\end{document}

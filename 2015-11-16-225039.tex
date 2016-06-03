@@ -1,0 +1,163 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage{amssymb,amsmath,amsfonts,amsthm,graphicx,ifthen,mathrsfs, wrapfig}
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+
+\oddsidemargin=0in
+\evensidemargin=0in
+\textwidth=6.5in
+\topmargin=-1.0in
+\textheight=9.0in
+\parindent=0in
+
+
+\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+\special{papersize=8.5in,11in}
+\setlength{\pdfpageheight}{\paperheight}
+\setlength{\pdfpagewidth}{\paperwidth}
+
+\newcommand{\ud}{\,\mathrm{d}}
+\pointsinmargin
+
+Names: \underline{Chelsea Blake Kelsey Mihachik \hspace{4in}}\\
+Math 212 Fall 2015, Tennenhouse \\
+
+
+\begin{center}
+\textbf{HW 12, due 11/20/15}\\
+\end{center}
+
+
+\begin{questions}
+
+
+\question[15,5]
+Show that $\mathbb{N}$ has the same cardinality as $\mathbb{Z}$ by finding a bijection.\\
+\textbf{Solution:}\\
+\begin{proof}
+$\mathbb{N}$ has the same cardinality as $\mathbb{Z}$ by mapping $\mathbb{N} \rightarrow \mathbb{Z}$ with $f: \lfloor \frac{n}{2} \rfloor (-1)^n$.\\
+
+$f$ is onto because when we plug in different natural numbers for $n$, the floor function ensures that every integer is visited twice, but the $(-1)^n$ ensures that for each integer visited twice, one's sign is negated. Notably, $\mathbb{N}$ starts at 1, but we are still able to map the 0 integer in $\mathbb{Z}$ because of the floor function. Since all integers are mapped, the function is onto.\\
+
+Next, $f$ is injective because every natural number is mapped to a unique integer. This is accomplished by the $(-1)^n$ component of the function, which switches the sign for what would've otherwise given us same values in $\mathbb{Z}$. This gives us a one-to-one correspondence.\\
+
+Since $f$ is both injective and onto, by bijection, $\mathbb{N}$ has the same cardinality as $\mathbb{Z}$
+
+\end{proof}
+
+\question
+Show that $|(0,1)|=|(-\infty,\infty)|$ by finding a bijection. It may be helpful to find a set $A$ and bijections between $(0,1)$ and $A$, and between $A$ and $(-\infty,\infty)$.
+\\
+\textbf{Solution:}
+
+
+First, Define $A$ and find a bijection between $|(0,1)|$ and $A$. We will define $A$ as
+\\
+we know that the cardinality of $|(-\infty,\infty)|$ is
+$\aleph_1$ so therefore we must show that the cardinality of $|(0,1)|$ is also $\infty$. Let's start making a list of numbers between $(0,1)$.... $(0.01,0.001,0.0001,0.00001,0.0000001)
+
+\question[15,9]
+Suppose two field biologists come in, each with infinitely many samples. Devise a simple way to store them all, using a clearly defined map.\\
+\textbf{Solution:}\\
+To store all samples of both biologist 1 (call them $b_1$) and biologist 2 (call them $b_2$), we must alternate between both biologists, or else we would never finish storing $b_1$'s samples. To store all samples, we could map $b_1$'s to $b_2$.\\
+
+$b_1$'s samples will be stored in the drawer number equal to $2k+1$ for all $k \geq 0$, meaning that their samples will be stored in all odd-numbered drawers.\\ 
+
+$b_1 \rightarrow b_2$ by the function $f: 2(b_1)-1$ $\forall$ $b_1$ = $2k+1$. When $k=0$, we will store $b_1$'s sample in drawer 1, but will not yet store a sample of $b_2$'s until $k=1$. This way, we can alternate between biologists and ensure that $b_1$'s samples are in all odd drawers and $b_2$'s samples are in all even drawers.
+
+
+\question[15,18]
+What is the cardinality of the subset of $[0,1]$ consisting of infinite decimal expansions with only the digits $2$ and $5$? Justify.\\
+\textbf{Solution:}\\
+The cardinality is aleph one. By Cantor's diagonal proof, if we were to write down a set of all decimal numbers with alternating 2's and 5's between numbers 0 and 1, we would find that we could construct a new number each time if we carefully pick each digit and spot such that the new number we create is different from all previous numbers. Since the set is uncountable, its cardinality is aleph one.
+
+\question[15,21]
+Consider the set $W$ of all words using the English alphabet (sensical or otherwise). What is $|W|$?
+\\
+\textbf{Solution:}
+\\
+The cardinality of the set of all words using the english alphabet can be found in the following way:
+\\
+start with all one letter words, there are 26 of them, or $26^1$. Then move on to all two letter words, there are $26^2$ of them. there are $26^3$ three letter words, $26^4$ four letter words and so on until we get to $26^{26}$ 26 letter words. We 
+can keep doing this for infinite letter words. We are now
+finding all the subsets of of $W$, the set of all these 
+subsets is the power set. This set looks like $26^1,26^2,
+26^3,26^4,...,26^{\infty}$. we can see that this set is 
+$26^{\mathbb{N}$ becuase we know the set of $\mathbb{N}$
+is countable, we can say that the set of all sets of $W$ is
+also countable. Therefore the cardinality is equal to
+$\aleph_0$.
+%\\
+%Therefore the length of $W$ is:
+%\\
+%$\sum \limits_{i=1}^{26} 26^i = 6402364363415443603228541259936211926$
+
+\question[15,23]
+Is the set of all finite graphs countable or uncountable?
+\\
+\textbf{Solution:}
+\\
+Same as the question above, we will start with all graphs 
+with 1 node, then move on to all graphs with 2 nodes, then
+all graphs with 3 nodes, and so on. We see that the set of
+all subsets is mapped to the natural numbers with all total
+edges being one-to-one with the natural numbers. Therefore
+we can say that the cardinality is $\aleph_0$. Finally we 
+know that all set with cardinality $\aleph_0$ are 
+countable. So, we can set that the set of all finite graphs
+is countable.
+
+
+
+%The set of all finite graphs in uncountable.
+
+\question[15,24]
+In this problem we will count polynomials.
+\begin{parts}
+	\part Consider polynomials of the form $ax$, where $a\in \mathbb{N}$. How many such polynomials are there?\\
+    \textbf{Solution:}\\
+    $|\mathbb{N}|$ = Aleph Null polynomials
+	\part Now consider polynomials of the forms $ax+b$, where $a,b\in \mathbb{N}$. How many such polynomials are there?\\
+    \textbf{Solution:}\\
+    2$|\mathbb{N}|$ = Still Aleph Null polynomials
+	\part Continue considering, and this time examine polynomials of the form $ax^2+bx+c$, where $a,b,c\in \mathbb{N}$. How many such polynomials are there?\\
+    \textbf{Solution:}\\
+    3$|\mathbb{N}|$ = Still Aleph Null polynomials
+	\part Finally, consider polynomials of the form $a_nx^2 + a_{n-1}x^{n-1} + \ldots +a_1x + a_0$. How many such polynomials are there? Justify.\\
+    \textbf{Solution:}\\
+    There are infinitely many times the cardinality $|\mathbb{N}|$, which is still Aleph Null. This is because, just like all of the other cases, there is an infinite number of different polynomials in this form. However, this infinite is still technically countable.
+\end{parts}
+
+\question[15,25]
+\begin{parts}
+	\part Is the set of polynomials with integer coefficients countable or uncountable?\\
+    \textbf{Solution:}\\
+   In problem 7 we found that the cardinality of polynomials
+   with natural number coefficients is $\aleph_0$. We also
+   proved in problem 1 that the natural numbers has the 
+   same cardinality as the integers, we can therefore infer
+   that the cardinality of polynomials with natural number coefficients is the same as polynomials with integer 
+   coefficients and therefore is also $\aleph_0$. we know 
+   that all sets of cardinality $\aleph_0$ is countable.
+   Therefore, the set of polynomials with integer 
+   coefficients is countable.
+   
+   
+   
+   
+	\part A real number (can be rational or irrational) is \emph{algebraic} if it is a solution to $p(x)=0$, where $p(x)$ is a finite polynomial with integer coefficients. So, e.g., $\sqrt{2}$ is algebraic as the solution to $x^2-2=0$. A real number is \emph{transcendental} if it is not algebraic, like $\pi$ and $e$. Are there more transcendentals or algebraic numbers? Justify.\\
+    \textbf{Solution:}\\
+    There are more transcendental numbers (which are uncountable) than algebraic numbers (which are countable). Both are infinite but the algebraic numbers have a smaller infinity since their cardinality is aleph null, while the transcendentals have a cardinality of aleph one.
+	\part Note that $e,pi,e+\pi,$ and $e^{\pi}$ are transcendental, but we don't yet know whether $\pi^e$ is transcendental. 
+\end{parts}
+
+
+
+\end{questions}
+
+\end{document}

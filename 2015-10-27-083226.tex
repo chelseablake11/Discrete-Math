@@ -1,0 +1,648 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage{amssymb,amsmath,amsfonts,amsthm,graphicx,ifthen,mathrsfs, wrapfig}
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+
+\oddsidemargin=0in
+\evensidemargin=0in
+\textwidth=6.5in
+\topmargin=-1.0in
+\textheight=9.0in
+\parindent=0in
+
+
+\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+\special{papersize=8.5in,11in}
+\setlength{\pdfpageheight}{\paperheight}
+\setlength{\pdfpagewidth}{\paperwidth}
+
+\newcommand{\ud}{\,\mathrm{d}}
+\pointsinmargin
+
+Names: \underline{Chelsea Blake and Kelsey Mihachik \hspace{2in}}\\
+Math 212 Fall 2013, Tennenhouse \\
+
+
+\begin{center}
+\textbf{HW 9, due 10/30/15}\\
+\end{center}
+
+
+\begin{questions}
+
+
+\question[12,2]
+Given a graph with an Euler traversal but not circuit, how can you produce a graph with an Euler circuit?\\
+\textbf{Solution:}\\
+If a graph has an Euler traversal, then each edge is touched exactly once. To make an Euler circuit, you would add an edge between the start vertex and the end vertex in the traversal.
+
+\question[12,6]
+(problem 6, p.355)\\
+\textbf{Solution:}\\
+James Bomb is about to announce that the two individuals he questioned were somehow connected to the murder. It is possible that the door inspection person is telling the truth, but impossible for the cleaning service person to be telling the truth.\\
+1. \textbf{Door inspector} is either lying, or he is telling the truth and committed the murder. This is because he said he went through every door exactly once. We know this can't be true because since there are two doors leading to the garden from the plant room, there would be no way to enter and exit that room in such a way where he wouldn't have to go through a door twice. This means that he is either lying about going through the doors exactly once, or he is telling the truth and never left the house, in which case he committed the murder.\\
+2. \textbf{Cleaning service person} claims to have visited each room exactly once, but we know there is no way for him/her to be telling the truth because there is no way to enter and exit the private bathroom without going through the best bedroom twice.
+
+\question[12,9]
+Consider the graph in 12.5 with vertices labeled with orderings of ABCD, edges labeled with adjacent-letter switches, and a Hamilton circuit. Make a planar drawing of this graph or show that there is no planar drawing.
+\\
+\textbf{Solution:}
+\\
+
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.56816,-4.93494) rectangle (9.11452,4.75474);
+\draw (0.59612,4.62164) node[anchor=north west] {ABCD};
+\draw (-1.58672,3.66332) node[anchor=north west] {BACD};
+\draw (1.02204,3.18416) node[anchor=north west] {ACBD};
+\draw (2.93868,3.13092) node[anchor=north west] {ABDC};
+\draw (-0.76,3.14)-- (0.94,3.84);
+\draw (0.94,3.84)-- (0.9,2.72);
+\draw (0.94,3.84)-- (2.84,3.28);
+\draw (-2.83786,2.65176) node[anchor=north west] {BCAD};
+\draw (-0.3622,1.56034) node[anchor=north west] {BADC};
+\draw (-1.98,2.36)-- (-0.76,3.14);
+\draw (-0.76,3.14)-- (0.72922,1.2409);
+\draw (0.9,2.72)-- (1.08,1.94);
+\draw (0.9,2.72)-- (2.24,1.98);
+\draw (0.32992,2.3057) node[anchor=north west] {CABD};
+\draw (2.4329,2.27908) node[anchor=north west] {ACDB};
+\draw (0.72922,1.2409)-- (2.84,3.28);
+\draw (2.84,3.28)-- (4.32,2.58);
+\draw (4.5625,3.1043) node[anchor=north west] {ADBC};
+\draw (-1.98,2.36)-- (-3.06,1.46);
+\draw (-3.8228,1.98626) node[anchor=north west] {CBAD};
+\draw (-1.98,2.36)-- (-1.9,0.98);
+\draw (-1.85292,1.61358) node[anchor=north west] {BCDA};
+\draw (0.72922,1.2409)-- (-0.92,0.62);
+\draw (-0.7615,0.9747) node[anchor=north west] {BDAC};
+\draw (1.08,1.94)-- (2.06,0.4);
+\draw (1.12852,0.54878) node[anchor=north west] {CADB};
+\draw (2.06,0.4)-- (2.24,1.98);
+\draw (2.24,1.98)-- (3.9,1.54);
+\draw (3.71066,1.374) node[anchor=north west] {ADCB};
+\draw (4.32,2.58)-- (3.9,1.54);
+\draw (4.32,2.58)-- (6.35,-1.024);
+\draw (6.8252,-0.54264) node[anchor=north west] {DABC};
+\draw (-3.06,1.46)-- (1.08,1.94);
+\draw (-3.06,1.46)-- (-2.92,-0.56);
+\draw (-3.6897,-0.11672) node[anchor=north west] {CBDA};
+\draw (-1.9,0.98)-- (-2.92,-0.56);
+\draw (-1.9,0.98)-- (-1.66,-0.72);
+\draw (-1.90616,-0.91532) node[anchor=north west] {BDCA};
+\draw (-0.92,0.62)-- (-1.66,-0.72);
+\draw (-0.92,0.62)-- (0.52,-1.42);
+\draw (0.40978,-1.39448) node[anchor=north west] {DBAC};
+\draw (2.06,0.4)-- (1.9,-0.96);
+\draw (1.12852,-0.59588) node[anchor=north west] {CDAB};
+\draw (3.9,1.54)-- (3.7,-0.26);
+\draw (2.91206,0.01638) node[anchor=north west] {DACB};
+\draw (-1.66,-0.72)-- (-0.778,-2.432);
+\draw (-1.85292,-2.2197) node[anchor=north west] {DBCA};
+\draw (6.35,-1.024)-- (0.52,-1.42);
+\draw (-0.778,-2.432)-- (0.52,-1.42);
+\draw (1.9,-0.96)-- (2.852,-3.114);
+\draw (3.12502,-2.96506) node[anchor=north west] {DCAB};
+\draw (1.9,-0.96)-- (1.334,-2.916);
+\draw (0.62274,-3.09816) node[anchor=north west] {CDBA};
+\draw (3.7,-0.26)-- (2.852,-3.114);
+\draw (3.7,-0.26)-- (6.35,-1.024);
+\draw (-2.92,-0.56)-- (1.334,-2.916);
+\draw (-0.778,-2.432)-- (-0.404,-3.84);
+\draw (-1.48024,-3.57732) node[anchor=north west] {DCBA};
+\draw (1.334,-2.916)-- (-0.404,-3.84);
+\draw (-0.404,-3.84)-- (2.852,-3.114);
+\begin{scriptsize}
+\draw [fill=qqqqff] (0.94,3.84) circle (1.5pt);
+\draw [fill=qqqqff] (-0.76,3.14) circle (1.5pt);
+\draw [fill=qqqqff] (0.9,2.72) circle (1.5pt);
+\draw [fill=qqqqff] (2.84,3.28) circle (1.5pt);
+\draw [fill=qqqqff] (-1.98,2.36) circle (1.5pt);
+\draw [fill=qqqqff] (0.72922,1.2409) circle (1.5pt);
+\draw [fill=qqqqff] (1.08,1.94) circle (1.5pt);
+\draw [fill=qqqqff] (2.24,1.98) circle (1.5pt);
+\draw [fill=qqqqff] (4.32,2.58) circle (1.5pt);
+\draw [fill=qqqqff] (-3.06,1.46) circle (1.5pt);
+\draw [fill=qqqqff] (-1.9,0.98) circle (1.5pt);
+\draw [fill=qqqqff] (-0.92,0.62) circle (1.5pt);
+\draw [fill=qqqqff] (2.06,0.4) circle (1.5pt);
+\draw [fill=qqqqff] (3.9,1.54) circle (1.5pt);
+\draw [fill=qqqqff] (6.35,-1.024) circle (1.5pt);
+\draw [fill=qqqqff] (-2.92,-0.56) circle (1.5pt);
+\draw [fill=qqqqff] (-1.66,-0.72) circle (1.5pt);
+\draw [fill=qqqqff] (0.52,-1.42) circle (1.5pt);
+\draw [fill=qqqqff] (1.9,-0.96) circle (1.5pt);
+\draw [fill=qqqqff] (3.7,-0.26) circle (1.5pt);
+\draw [fill=qqqqff] (-0.778,-2.432) circle (1.5pt);
+\draw [fill=qqqqff] (2.852,-3.114) circle (1.5pt);
+\draw [fill=qqqqff] (1.334,-2.916) circle (1.5pt);
+\draw [fill=qqqqff] (-0.404,-3.84) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture}\\
+There is no planar drawing because edges must cross.
+
+
+
+
+
+
+
+
+
+\question[12,15]
+Do any of the graphs in Figure 12.19, p.357, have Hamilton circuits? What about Hamilton traversals?\\
+\textbf{Solution:}\\
+Graph 1: has both a Hamilton circuit and traversal.\\
+circuit = ebdfcga (repeats)\\
+traversal = eacfbgd (cannot repeat)\\
+Graph 2: has ONLY a traversal.\\
+traversal = bigdafhec\\
+Graph 3: has both a Hamilton circuit and traversal.\\
+circuit = cfagbdhe (repeats)\\
+traversal = dbhefagc (cannot repeat)
+
+
+\question[12,17]
+Run Dijkstra's algorithm on the graph in Figure 10.19 on p.306 to find the distance from the top vertex to all other vertices.
+\\
+\textbf{Solution:}
+\\
+\definecolor{ffqqtt}{rgb}{1.,0.,0.2}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(2.6420767334571043,1.7540408712993807) rectangle (9.054500578868012,7.884227751683396);
+\draw [color=ffqqtt] (5.,5.)-- (4.18,4.06);
+\draw (4.18,4.06)-- (4.18,3.04);
+\draw (4.18,3.04)-- (4.9,2.24);
+\draw [color=ffqqtt] (4.9,2.24)-- (5.58,3.);
+\draw (5.58,3.)-- (5.7,4.06);
+\draw (5.7,4.06)-- (5.,5.);
+\draw (5.7,4.06)-- (4.18,3.04);
+\draw (4.18,3.04)-- (4.18,4.06);
+\draw [color=ffqqtt] (5.58,3.)-- (4.18,4.06);
+\draw(5.,5.) circle (0.4386342439892263cm);
+\draw (4.72,2.58)-- (4.7,2.08);
+\draw (4.7,2.08)-- (5.16,2.06);
+\draw (5.16,2.06)-- (5.172523076923078,2.5445846153846157);
+\draw (5.172523076923078,2.5445846153846157)-- (4.72,2.58);
+\draw (4.233893216208756,4.678015828977943) node[anchor=north west] {1};
+\draw (5.554762212534594,4.711884264781171) node[anchor=north west] {2};
+\draw (5.870867613364709,3.7184101478865235) node[anchor=north west] {1};
+\draw (5.419288469321687,2.6571991593854234) node[anchor=north west] {2};
+\draw (4.674182881650702,4.011936591514488) node[anchor=north west] {3};
+\draw (4.685472360251778,3.357146832652106) node[anchor=north west] {4};
+\draw (4.256472173410907,2.803962381199405) node[anchor=north west] {2};
+\draw (3.951656251181867,3.808725976695128) node[anchor=north west] {3};
+\draw (3.827471986570036,4.305463035142451) node[anchor=north west] {(1,s)};
+\draw (5.814420220359332,3.142646739231671) node[anchor=north west] {(4,b)};
+\draw (3.804893029367885,3.142646739231671) node[anchor=north west] {(4,b)};
+\draw (5.904736049167936,4.136120856126318) node[anchor=north west] {(2,s)};
+\draw (5.227367333103404,2.499146458970366) node[anchor=north west] {(6,e)};
+\begin{scriptsize}
+\draw [fill=qqqqff] (5.,5.) circle (2.5pt);
+\draw[color=qqqqff] (5.080604111289421,5.208621323228494) node {$S$};
+\draw [fill=qqqqff] (4.18,4.06) circle (2.5pt);
+\draw[color=qqqqff] (4.256472173410907,4.260305120738149) node {$B$};
+\draw [fill=qqqqff] (5.7,4.06) circle (2.5pt);
+\draw[color=qqqqff] (5.7805517845561045,4.260305120738149) node {$C$};
+\draw [fill=qqqqff] (4.18,3.04) circle (2.5pt);
+\draw[color=qqqqff] (4.256472173410907,3.244252046641351) node {$D$};
+\draw [fill=qqqqff] (5.58,3.) circle (2.5pt);
+\draw[color=qqqqff] (5.656367519944274,3.199094132237049) node {$E$};
+\draw [fill=qqqqff] (4.9,2.24) circle (2.5pt);
+\draw[color=qqqqff] (4.978998803879741,2.4426990659649883) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\\
+By Dijkstra's algorithm, we see that the shortest weighted path from $S$ to $F$ is $S-B-E-F$ giving the graph length 4.
+
+
+
+
+
+\question[12,23]
+(problem 23, p. 358)\\
+\textbf{Solution:}\\
+
+
+
+
+
+
+
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.52,-0.44) rectangle (5.34,4.58);
+\draw(3.88,2.72) circle (0.4837354648979134cm);
+\draw (3.88,2.72)-- (1.88,3.34);
+\draw (1.88,3.34)-- (-1.46,3.94);
+\draw (3.88,2.72)-- (2.04,1.36);
+\draw (3.88,2.72)-- (-0.34,2.7);
+\draw (3.88,2.72)-- (-1.34,1.42);
+\draw (-1.46,3.94)-- (-0.34,2.7);
+\draw (-0.34,2.7)-- (1.88,3.34);
+\draw (-1.46,3.94)-- (-1.34,1.42);
+\draw (-1.34,1.42)-- (-0.34,2.7);
+\draw (2.04,1.36)-- (-1.34,1.42);
+\draw (2.04,1.36)-- (1.88,3.34);
+\draw (2.04,1.36)-- (-0.34,2.7);
+\draw (3.88,2.72)-- (1.02,4.28);
+\draw (1.02,4.28)-- (-1.46,3.94);
+\draw (-1.46,3.94)-- (-2.24,1.16);
+\draw (-2.24,1.16)-- (0.42,-0.04);
+\draw (0.42,-0.04)-- (2.04,1.36);
+\draw (1.88,3.34)-- (-1.34,1.42);
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.46,3.94) circle (1.5pt);
+\draw[color=qqqqff] (-1.32,4.22) node {$A$};
+\draw [fill=qqqqff] (1.88,3.34) circle (1.5pt);
+\draw[color=qqqqff] (2.02,3.62) node {$B$};
+\draw [fill=qqqqff] (-0.34,2.7) circle (1.5pt);
+\draw[color=qqqqff] (-0.2,2.98) node {$C$};
+\draw [fill=qqqqff] (-1.34,1.42) circle (1.5pt);
+\draw[color=qqqqff] (-1.2,1.7) node {$D$};
+\draw [fill=qqqqff] (2.04,1.36) circle (1.5pt);
+\draw[color=qqqqff] (2.18,1.64) node {$E$};
+\draw [fill=qqqqff] (3.88,2.72) circle (1.5pt);
+\draw[color=qqqqff] (4.02,3.) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}\\
+
+
+
+
+
+
+
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.08,-0.32) rectangle (5.96,4.98);
+\draw(3.88,2.72) circle (0.4837354648979134cm);
+\draw (3.88,2.72)-- (1.88,3.34);
+\draw (1.88,3.34)-- (-1.46,3.94);
+\draw (3.88,2.72)-- (2.04,1.36);
+\draw (3.88,2.72)-- (-0.34,2.7);
+\draw (3.88,2.72)-- (-1.34,1.42);
+\draw (-1.46,3.94)-- (-0.34,2.7);
+\draw (-0.34,2.7)-- (1.88,3.34);
+\draw (-1.46,3.94)-- (-1.34,1.42);
+\draw (-1.34,1.42)-- (-0.34,2.7);
+\draw (2.04,1.36)-- (-1.34,1.42);
+\draw (2.04,1.36)-- (1.88,3.34);
+\draw (2.04,1.36)-- (-0.34,2.7);
+\draw (3.88,2.72)-- (1.02,4.28);
+\draw (1.02,4.28)-- (-1.46,3.94);
+\draw (-1.46,3.94)-- (-2.24,1.16);
+\draw (-2.24,1.16)-- (0.42,-0.04);
+\draw (0.42,-0.04)-- (2.04,1.36);
+\draw (1.88,3.34)-- (-1.34,1.42);
+\draw (4.6,2.94) node[anchor=north west] {(25, 8)};
+\draw (-3.66,4.28) node[anchor=north west] {(32,f)};
+\draw (-3.68,3.76) node[anchor=north west] {(10, f)};
+\draw (-3.7,3.24) node[anchor=north west] {(19,f)};
+\draw (-3.66,2.34) node[anchor=north west] {(8,f)};
+\draw (-3.68,2.78) node[anchor=north west] {(20,f)};
+\draw (2.22,3.5) node[anchor=north west] {10};
+\draw (0.82,4.76) node[anchor=north west] {32};
+\draw (3.12,1.84) node[anchor=north west] {8};
+\draw (1.2,2.4) node[anchor=north west] {20};
+\draw (1.5,3.08) node[anchor=north west] {19};
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.46,3.94) circle (1.5pt);
+\draw[color=qqqqff] (-1.32,4.22) node {$A$};
+\draw [fill=qqqqff] (1.88,3.34) circle (1.5pt);
+\draw[color=qqqqff] (2.02,3.62) node {$B$};
+\draw [fill=qqqqff] (-0.34,2.7) circle (1.5pt);
+\draw[color=qqqqff] (-0.2,2.98) node {$C$};
+\draw [fill=qqqqff] (-1.34,1.42) circle (1.5pt);
+\draw[color=qqqqff] (-1.2,1.7) node {$D$};
+\draw [fill=qqqqff] (2.04,1.36) circle (1.5pt);
+\draw[color=qqqqff] (2.18,1.64) node {$E$};
+\draw [fill=qqqqff] (3.88,2.72) circle (1.5pt);
+\draw[color=qqqqff] (4.02,3.) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}\\
+
+
+
+
+
+
+
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ffqqff}{rgb}{1.,0.,1.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.08,-0.32) rectangle (5.96,4.98);
+\draw(3.88,2.72) circle (0.4837354648979134cm);
+\draw (3.88,2.72)-- (1.88,3.34);
+\draw (1.88,3.34)-- (-1.46,3.94);
+\draw [color=ffqqff] (3.88,2.72)-- (2.04,1.36);
+\draw (3.88,2.72)-- (-0.34,2.7);
+\draw (3.88,2.72)-- (-1.34,1.42);
+\draw (-1.46,3.94)-- (-0.34,2.7);
+\draw (-0.34,2.7)-- (1.88,3.34);
+\draw (-1.46,3.94)-- (-1.34,1.42);
+\draw (-1.34,1.42)-- (-0.34,2.7);
+\draw (2.04,1.36)-- (-1.34,1.42);
+\draw (2.04,1.36)-- (1.88,3.34);
+\draw (2.04,1.36)-- (-0.34,2.7);
+\draw (3.88,2.72)-- (1.02,4.28);
+\draw (1.02,4.28)-- (-1.46,3.94);
+\draw (-1.46,3.94)-- (-2.24,1.16);
+\draw (-2.24,1.16)-- (0.42,-0.04);
+\draw (0.42,-0.04)-- (2.04,1.36);
+\draw (1.88,3.34)-- (-1.34,1.42);
+\draw (4.6,2.94) node[anchor=north west] {(25, 8)};
+\draw (-3.66,4.28) node[anchor=north west] {(27,e)};
+\draw (-3.68,3.76) node[anchor=north west] {(7, e)};
+\draw (-3.7,3.24) node[anchor=north west] {(15, e)};
+\draw (-3.68,2.78) node[anchor=north west] {(14, e)};
+\draw (0.74,2.44) node[anchor=north west] {15};
+\draw (-2.38,0.8) node[anchor=north west] {27};
+\draw (3.12,1.84) node[anchor=north west] {8};
+\draw (0.42,1.74) node[anchor=north west] {14};
+\draw (2.,2.62) node[anchor=north west] {7};
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.46,3.94) circle (1.5pt);
+\draw[color=qqqqff] (-1.32,4.22) node {$A$};
+\draw [fill=qqqqff] (1.88,3.34) circle (1.5pt);
+\draw[color=qqqqff] (2.02,3.62) node {$B$};
+\draw [fill=qqqqff] (-0.34,2.7) circle (1.5pt);
+\draw[color=qqqqff] (-0.2,2.98) node {$C$};
+\draw [fill=qqqqff] (-1.34,1.42) circle (1.5pt);
+\draw[color=qqqqff] (-1.2,1.7) node {$D$};
+\draw [fill=qqqqff] (2.04,1.36) circle (1.5pt);
+\draw[color=qqqqff] (2.18,1.64) node {$E$};
+\draw [fill=qqqqff] (3.88,2.72) circle (1.5pt);
+\draw[color=qqqqff] (4.02,3.) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}\\
+
+
+
+
+
+
+
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ffqqff}{rgb}{1.,0.,1.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.08,-0.32) rectangle (5.96,4.98);
+\draw(3.88,2.72) circle (0.4837354648979134cm);
+\draw (3.88,2.72)-- (1.88,3.34);
+\draw (1.88,3.34)-- (-1.46,3.94);
+\draw [color=ffqqff] (3.88,2.72)-- (2.04,1.36);
+\draw (3.88,2.72)-- (-0.34,2.7);
+\draw (3.88,2.72)-- (-1.34,1.42);
+\draw (-1.46,3.94)-- (-0.34,2.7);
+\draw (-0.34,2.7)-- (1.88,3.34);
+\draw (-1.46,3.94)-- (-1.34,1.42);
+\draw (-1.34,1.42)-- (-0.34,2.7);
+\draw (2.04,1.36)-- (-1.34,1.42);
+\draw [color=ffqqff] (2.04,1.36)-- (1.88,3.34);
+\draw (2.04,1.36)-- (-0.34,2.7);
+\draw (3.88,2.72)-- (1.02,4.28);
+\draw (1.02,4.28)-- (-1.46,3.94);
+\draw (-1.46,3.94)-- (-2.24,1.16);
+\draw (-2.24,1.16)-- (0.42,-0.04);
+\draw (0.42,-0.04)-- (2.04,1.36);
+\draw (1.88,3.34)-- (-1.34,1.42);
+\draw (4.6,2.94) node[anchor=north west] {(25, 8)};
+\draw (-3.66,4.28) node[anchor=north west] {(19, b)};
+\draw (-3.68,3.76) node[anchor=north west] {(10, b)};
+\draw (-3.7,3.24) node[anchor=north west] {(15, b)};
+\draw (0.34,3.38) node[anchor=north west] {10};
+\draw (2.,2.64) node[anchor=north west] {7};
+\draw (3.12,1.84) node[anchor=north west] {8};
+\draw (0.46,2.52) node[anchor=north west] {15};
+\draw (0.7,3.9) node[anchor=north west] {19};
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.46,3.94) circle (1.5pt);
+\draw[color=qqqqff] (-1.32,4.22) node {$A$};
+\draw [fill=qqqqff] (1.88,3.34) circle (1.5pt);
+\draw[color=qqqqff] (2.02,3.62) node {$B$};
+\draw [fill=qqqqff] (-0.34,2.7) circle (1.5pt);
+\draw[color=qqqqff] (-0.2,2.98) node {$C$};
+\draw [fill=qqqqff] (-1.34,1.42) circle (1.5pt);
+\draw[color=qqqqff] (-1.2,1.7) node {$D$};
+\draw [fill=qqqqff] (2.04,1.36) circle (1.5pt);
+\draw[color=qqqqff] (2.18,1.64) node {$E$};
+\draw [fill=qqqqff] (3.88,2.72) circle (1.5pt);
+\draw[color=qqqqff] (4.02,3.) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}\\
+
+
+
+
+
+
+
+
+
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ffqqff}{rgb}{1.,0.,1.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.08,-0.32) rectangle (5.96,4.98);
+\draw(3.88,2.72) circle (0.4837354648979134cm);
+\draw (3.88,2.72)-- (1.88,3.34);
+\draw (1.88,3.34)-- (-1.46,3.94);
+\draw [color=ffqqff] (3.88,2.72)-- (2.04,1.36);
+\draw (3.88,2.72)-- (-0.34,2.7);
+\draw (3.88,2.72)-- (-1.34,1.42);
+\draw (-1.46,3.94)-- (-0.34,2.7);
+\draw [color=ffqqff] (-0.34,2.7)-- (1.88,3.34);
+\draw (-1.46,3.94)-- (-1.34,1.42);
+\draw (-1.34,1.42)-- (-0.34,2.7);
+\draw (2.04,1.36)-- (-1.34,1.42);
+\draw [color=ffqqff] (2.04,1.36)-- (1.88,3.34);
+\draw (2.04,1.36)-- (-0.34,2.7);
+\draw (3.88,2.72)-- (1.02,4.28);
+\draw (1.02,4.28)-- (-1.46,3.94);
+\draw (-1.46,3.94)-- (-2.24,1.16);
+\draw (-2.24,1.16)-- (0.42,-0.04);
+\draw (0.42,-0.04)-- (2.04,1.36);
+\draw (1.88,3.34)-- (-1.34,1.42);
+\draw (4.6,2.94) node[anchor=north west] {(25, 8)};
+\draw (-3.66,4.28) node[anchor=north west] {(9, c)};
+\draw (-3.68,3.76) node[anchor=north west] {(6, c)};
+\draw (0.34,3.38) node[anchor=north west] {10};
+\draw (2.,2.64) node[anchor=north west] {7};
+\draw (3.12,1.84) node[anchor=north west] {8};
+\draw (-1.06,2.36) node[anchor=north west] {6};
+\draw (-0.9,3.58) node[anchor=north west] {9};
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.46,3.94) circle (1.5pt);
+\draw[color=qqqqff] (-1.32,4.22) node {$A$};
+\draw [fill=qqqqff] (1.88,3.34) circle (1.5pt);
+\draw[color=qqqqff] (2.02,3.62) node {$B$};
+\draw [fill=qqqqff] (-0.34,2.7) circle (1.5pt);
+\draw[color=qqqqff] (-0.2,2.98) node {$C$};
+\draw [fill=qqqqff] (-1.34,1.42) circle (1.5pt);
+\draw[color=qqqqff] (-1.2,1.7) node {$D$};
+\draw [fill=qqqqff] (2.04,1.36) circle (1.5pt);
+\draw[color=qqqqff] (2.18,1.64) node {$E$};
+\draw [fill=qqqqff] (3.88,2.72) circle (1.5pt);
+\draw[color=qqqqff] (4.02,3.) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}\\
+
+
+
+
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ffqqff}{rgb}{1.,0.,1.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.08,-0.32) rectangle (5.96,4.98);
+\draw(3.88,2.72) circle (0.4837354648979134cm);
+\draw (3.88,2.72)-- (1.88,3.34);
+\draw (1.88,3.34)-- (-1.46,3.94);
+\draw [color=ffqqff] (3.88,2.72)-- (2.04,1.36);
+\draw (3.88,2.72)-- (-0.34,2.7);
+\draw (3.88,2.72)-- (-1.34,1.42);
+\draw (-1.46,3.94)-- (-0.34,2.7);
+\draw [color=ffqqff] (-0.34,2.7)-- (1.88,3.34);
+\draw [color=ffqqff] (-1.46,3.94)-- (-1.34,1.42);
+\draw [color=ffqqff] (-1.34,1.42)-- (-0.34,2.7);
+\draw (2.04,1.36)-- (-1.34,1.42);
+\draw [color=ffqqff] (2.04,1.36)-- (1.88,3.34);
+\draw (2.04,1.36)-- (-0.34,2.7);
+\draw (3.88,2.72)-- (1.02,4.28);
+\draw (1.02,4.28)-- (-1.46,3.94);
+\draw (-1.46,3.94)-- (-2.24,1.16);
+\draw (-2.24,1.16)-- (0.42,-0.04);
+\draw (0.42,-0.04)-- (2.04,1.36);
+\draw (1.88,3.34)-- (-1.34,1.42);
+\draw (4.6,2.94) node[anchor=north west] {(25, 8)};
+\draw (-3.08,4.32) node[anchor=north west] {(14, d)};
+\draw (0.34,3.38) node[anchor=north west] {10};
+\draw (2.,2.64) node[anchor=north west] {7};
+\draw (3.12,1.84) node[anchor=north west] {8};
+\draw (-1.06,2.36) node[anchor=north west] {6};
+\draw (-1.8,2.76) node[anchor=north west] {14};
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.46,3.94) circle (1.5pt);
+\draw[color=qqqqff] (-1.32,4.22) node {$A$};
+\draw [fill=qqqqff] (1.88,3.34) circle (1.5pt);
+\draw[color=qqqqff] (2.02,3.62) node {$B$};
+\draw [fill=qqqqff] (-0.34,2.7) circle (1.5pt);
+\draw[color=qqqqff] (-0.2,2.98) node {$C$};
+\draw [fill=qqqqff] (-1.34,1.42) circle (1.5pt);
+\draw[color=qqqqff] (-1.2,1.7) node {$D$};
+\draw [fill=qqqqff] (2.04,1.36) circle (1.5pt);
+\draw[color=qqqqff] (2.18,1.64) node {$E$};
+\draw [fill=qqqqff] (3.88,2.72) circle (1.5pt);
+\draw[color=qqqqff] (4.02,3.) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}\\
+
+By Dijkstra's algorithm, the minimum amount of pipe needed would be around \textbf{45 units} (drawing did not have clear scale so this is an estimate).
+
+
+
+
+
+
+
+
+
+
+
+
+\question[12,24]
+(problem 24, p. 359)
+\\
+\textbf{Solution:}
+\\
+
+The Iscosian Game has a playing board (located below) with each vertex being a hole. The question asks if you can make a trip around the entire board and get back to where you started while only being able to place one peg in each vertex. The answer is yes. One way to do it is shown on the board below.
+\\
+\definecolor{ffqqtt}{rgb}{1.,0.,0.2}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(1.,3.08) rectangle (12.36,13.94);
+\draw (3.22,9.96)-- (3.88,6.84);
+\draw (5.46,11.32)-- (5.46,10.52);
+\draw (4.76,10.08)-- (3.94,9.76);
+\draw (7.76,9.76)-- (6.94,9.74);
+\draw (6.86,6.8)-- (6.42,7.52);
+\draw (4.36,7.56)-- (4.36,8.76);
+\draw (6.,10.)-- (5.82,9.4);
+\draw (5.,9.38)-- (4.98,8.76);
+\draw (5.3,7.62)-- (5.36,8.24);
+\draw (6.66,8.72)-- (5.88,8.76);
+\draw [->,color=ffqqtt] (5.46,11.32) -- (7.76,9.76);
+\draw [->,color=ffqqtt] (7.76,9.76) -- (6.86,6.8);
+\draw [->,color=ffqqtt] (6.86,6.8) -- (3.88,6.84);
+\draw [->,color=ffqqtt] (3.88,6.84) -- (4.36,7.56);
+\draw [->,color=ffqqtt] (4.36,7.56) -- (5.3,7.62);
+\draw [->,color=ffqqtt] (5.3,7.62) -- (6.42,7.52);
+\draw [->,color=ffqqtt] (6.42,7.52) -- (6.66,8.72);
+\draw [->,color=ffqqtt] (6.66,8.72) -- (6.94,9.74);
+\draw [->,color=ffqqtt] (6.94,9.74) -- (6.,10.);
+\draw [->,color=ffqqtt] (6.,10.) -- (5.46,10.52);
+\draw [->,color=ffqqtt] (5.46,10.52) -- (4.76,10.08);
+\draw [->,color=ffqqtt] (4.76,10.08) -- (5.,9.38);
+\draw [->,color=ffqqtt] (5.,9.38) -- (5.82,9.4);
+\draw [->,color=ffqqtt] (5.82,9.4) -- (5.88,8.76);
+\draw [->,color=ffqqtt] (5.88,8.76) -- (5.36,8.24);
+\draw [->,color=ffqqtt] (5.36,8.24) -- (4.98,8.76);
+\draw [->,color=ffqqtt] (4.98,8.76) -- (4.36,8.76);
+\draw [->,color=ffqqtt] (4.36,8.76) -- (3.94,9.76);
+\draw [->,color=ffqqtt] (3.94,9.76) -- (3.22,9.96);
+\draw [->,color=ffqqtt] (3.22,9.96) -- (5.46,11.32);
+\begin{scriptsize}
+\draw [fill=qqqqff] (5.46,11.32) circle (2.5pt);
+\draw [fill=qqqqff] (3.22,9.96) circle (2.5pt);
+\draw [fill=qqqqff] (3.88,6.84) circle (2.5pt);
+\draw [fill=qqqqff] (6.86,6.8) circle (2.5pt);
+\draw [fill=qqqqff] (7.76,9.76) circle (2.5pt);
+\draw [fill=qqqqff] (5.46,10.52) circle (2.5pt);
+\draw [fill=qqqqff] (4.76,10.08) circle (2.5pt);
+\draw [fill=qqqqff] (3.94,9.76) circle (2.5pt);
+\draw [fill=qqqqff] (6.94,9.74) circle (2.5pt);
+\draw [fill=qqqqff] (6.42,7.52) circle (2.5pt);
+\draw [fill=qqqqff] (4.36,7.56) circle (2.5pt);
+\draw [fill=qqqqff] (6.,10.) circle (2.5pt);
+\draw [fill=qqqqff] (6.66,8.72) circle (2.5pt);
+\draw [fill=qqqqff] (5.3,7.62) circle (2.5pt);
+\draw [fill=qqqqff] (4.36,8.76) circle (2.5pt);
+\draw [fill=qqqqff] (5.,9.38) circle (2.5pt);
+\draw [fill=qqqqff] (5.82,9.4) circle (2.5pt);
+\draw [fill=qqqqff] (4.98,8.76) circle (2.5pt);
+\draw [fill=qqqqff] (5.36,8.24) circle (2.5pt);
+\draw [fill=qqqqff] (5.88,8.76) circle (2.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+
+
+\end{questions}
+
+\end{document}
